@@ -8,9 +8,11 @@ class TripsController < ApplicationController
   end
 
   def create
+    trips = Trip.all
     @trip = Trip.new(trip_params)
     if @trip.save
-      # redirect_to index de steps_path
+      Itinerary.create(user: current_user, trip: @trip)
+      redirect_to new_trip_step_path(@trip)
     else
       render :new
     end
@@ -22,7 +24,7 @@ class TripsController < ApplicationController
 
   def update
     @trip = Trip.find(params[:id])
-    @trip.update(params[:trip])
+    @trip.update(trip_params)
   end
 
   def destroy

@@ -1,0 +1,6 @@
+<% if current_user %>
+  <%= simple_form_for [@trip, @step] do |f| %>
+    <%= f.input :title %>
+    <%= f.submit "Edit" %>
+  <% end %>
+<% end %>
