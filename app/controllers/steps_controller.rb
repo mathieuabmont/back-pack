@@ -11,7 +11,7 @@ class StepsController < ApplicationController
   def create
     @trip = Trip.find(params[:trip_id])
     @step = Step.new(step_params)
-    @step.user = current_user
+    @step.trip = @trip
     if @step.save
       redirect_to steps_path
     else
