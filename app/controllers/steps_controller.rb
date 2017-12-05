@@ -25,7 +25,7 @@ class StepsController < ApplicationController
 
   def update
     @step = Step.find(params[:id])
-    @step.update(params[:step])
+    @step.update(step_params)
   end
 
   def destroy

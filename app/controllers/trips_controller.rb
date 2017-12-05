@@ -24,7 +24,7 @@ class TripsController < ApplicationController
 
   def update
     @trip = Trip.find(params[:id])
-    @trip.update(params[:trip])
+    @trip.update(trip_params)
   end
 
   def destroy
