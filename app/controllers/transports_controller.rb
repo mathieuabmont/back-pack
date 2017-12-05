@@ -5,6 +5,7 @@ class TransportsController < ApplicationController
   end
 
   def new
+    @step = Step.find(params[:step_id])
     @transport = Transport.new
   end
 
@@ -15,9 +16,9 @@ class TransportsController < ApplicationController
     # @transport.user = current_user
     # authorize @transport
     if @transport.save
-      redirect_to trip_step_transport(@transport)
+      redirect_to transport_path(@transport)
     else
-      render:new
+      render :new
     end
   end
 
@@ -28,7 +29,7 @@ class TransportsController < ApplicationController
   def update
     @transport =Transport.find(params[:id])
     if @transport.update(transport_params)
-      redirect_to trip_step_transport(@transport)
+      redirect_to transport_path(@transport)
     else
       render :edit
     end
@@ -42,7 +43,7 @@ class TransportsController < ApplicationController
   private
 
   def transport_params
-    params require(:booking).permit(:departure_time, :departure_location, :arrival_time, :arrival_date, :arrival_location)
+    params require(:booking).permit(:departure_time, :departure_date, :departure_location, :arrival_time, :arrival_date, :arrival_location)
   end
 
 end
