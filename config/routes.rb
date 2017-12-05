@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   resources :steps, only: [:edit, :update, :destroy] do
     resources :transports, only: [:new, :create]
+    resources :activities, only: [:new, :create]
   end
 
   resources :transports, only: [:show, :edit, :update, :destroy]
+  resources :activities, only: [:show, :edit, :update, :destroy]
 end

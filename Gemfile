@@ -20,6 +20,8 @@ gem 'figaro'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 gem 'omniauth-facebook'
+gem 'open-uri'
+gem 'nokogiri'
 
 group :development, :test do
   gem 'pry-byebug'
