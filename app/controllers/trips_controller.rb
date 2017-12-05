@@ -11,6 +11,7 @@ class TripsController < ApplicationController
     @itinerary = Itinerary.find(params[:itinerary_id])
     @trip = Trip.new(trip_params)
     if @trip.save
+      # current_user.trips << @trip
       redirect_to index de steps_path
     else
       render :new
