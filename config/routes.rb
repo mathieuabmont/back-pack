@@ -4,7 +4,13 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   resources :trips, except: [:show] do
-    resources :steps, only: [:new, :create]
+    resources :steps, only: [:index, :new, :create] do
+    end
   end
-  resources :steps, only: [:index, :edit, :update, :destroy]
+
+  resources :steps, only: [:edit, :update, :destroy] do
+    resources :transports, only: [:new, :create]
+  end
+
+  resources :transports, only: [:show, :edit, :update, :destroy]
 end

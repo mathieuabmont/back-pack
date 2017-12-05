@@ -32,6 +32,19 @@ ActiveRecord::Schema.define(version: 20171205133915) do
     t.index ["trip_id"], name: "index_steps_on_trip_id"
   end
 
+  create_table "transports", force: :cascade do |t|
+    t.datetime "departure_time"
+    t.datetime "departure_date"
+    t.string "departure_location"
+    t.datetime "arrival_time"
+    t.datetime "arrival_date"
+    t.string "arrival_location"
+    t.bigint "step_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["step_id"], name: "index_transports_on_step_id"
+  end
+
   create_table "trips", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -66,4 +79,5 @@ ActiveRecord::Schema.define(version: 20171205133915) do
   add_foreign_key "itineraries", "trips"
   add_foreign_key "itineraries", "users"
   add_foreign_key "steps", "trips"
+  add_foreign_key "transports", "steps"
 end
