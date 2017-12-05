@@ -8,7 +8,8 @@
     "bootstrap": "3",
     "coffeescript": "1.12.7",
     "flatpickr": "^4.1.4",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "sass-loader": "^6.0.6"
   },
   "devDependencies": {
     "webpack": "^3.10.0",
