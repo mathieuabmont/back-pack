@@ -4,13 +4,14 @@ class StepsController < ApplicationController
   end
 
   def new
+    @trip = Trip.find(params[:trip_id])
     @step = Step.new
   end
 
   def create
     @trip = Trip.find(params[:trip_id])
     @step = Step.new(step_params)
-    @step.user = current_user
+    @step.trip = @trip
     if @step.save
       redirect_to steps_path
     else
@@ -24,7 +25,7 @@ class StepsController < ApplicationController
 
   def update
     @step = Step.find(params[:id])
-    @step.update(params[:step])
+    @step.update(step_params)
   end
 
   def destroy
