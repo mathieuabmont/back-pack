@@ -1,5 +1,5 @@
 <ul>
-  <h1>My steps</h1>
+  <h2>My steps </h2>
   <% @steps.each do |step| %>
   <li><%= link_to step.title, new_step_transport_path(step, Transport.new)%></li>
   <% end %>
