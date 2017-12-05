@@ -1,0 +1,6 @@
+<% if current_user %>
+  <%= simple_form_for @prestation do |f| %>
+    <%= f.input :title, placeholder: "Marseille" %>
+    <%= f.submit "Add"%>
+  <% end %>
+<% end %>
