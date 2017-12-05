@@ -8,9 +8,10 @@ class TripsController < ApplicationController
   end
 
   def create
+    @itinerary = Itinerary.find(params[:itinerary_id])
     @trip = Trip.new(trip_params)
     if @trip.save
-      # redirect_to index de steps_path
+      redirect_to index de steps_path
     else
       render :new
     end

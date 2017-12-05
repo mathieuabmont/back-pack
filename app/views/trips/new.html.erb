@@ -1,0 +1,6 @@
+<% if current_user %>
+  <%= simple_form_for [@itinerary, @trip] do |f| %>
+    <%= f.input :title, placeholder: "France 2017" %>
+    <%= f.submit "Add"%>
+  <% end %>
+<% end %>
