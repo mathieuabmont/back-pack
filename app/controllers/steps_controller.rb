@@ -1,6 +1,7 @@
 class StepsController < ApplicationController
   def index
-    @steps = Step.all
+    @trip = Trip.find(params[:trip_id])
+    @steps = Step.where(trip: @trip)
   end
 
   def new
