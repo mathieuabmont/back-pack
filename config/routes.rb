@@ -12,10 +12,16 @@ Rails.application.routes.draw do
 
   resources :steps, only: [:edit, :update, :destroy] do
     resources :transports, only: [:new, :create]
+    resources :activities, only: [:new, :create]
+    resources :accommodations, only: [:new, :create]
   end
+
 
   resources :transports, only: [:show, :edit, :update, :destroy] do
     resources :tickets, only: [:show, :new, :create, :edit, :update, :destroy]
   end
+
+  resources :accommodations, only: [:show, :edit, :update, :destroy]
+  resources :activities, only: [:show, :edit, :update, :destroy]
 
 end

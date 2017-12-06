@@ -1,0 +1,14 @@
+new accommodation
+
+<% if current_user %>
+  <%= simple_form_for [@step, @accommodation] do |f| %>
+    <%= f.input :category, as: :radio_buttons,
+    collection: ['Hôtel', 'Airbnb', 'Auberge de jeunesse', "Chez l'habitant", 'Autre'], wrapper: :vertical_radio_and_checkboxes %>
+    <%= f.input :name, placeholder: "Airbnb rue Oberkampf" %>
+    <%= f.input :location, placeholder: "120 rue Oberkampf" %>
+    <%= f.input :arrival_date %>
+    <%= f.input :departure_date %>
+    <%= f.input :url, placeholder: "http://www.airbnb/monnumerodereservation" %>
+    <%= f.submit "Add"%>
+  <% end %>
+<% end %>

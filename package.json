@@ -3,10 +3,13 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^3.0.2",
+    "babel": "^6.23.0",
     "babel-loader": "^7.1.2",
     "bootstrap": "3",
     "coffeescript": "1.12.7",
-    "jquery": "^3.2.1"
+    "flatpickr": "^4.1.4",
+    "jquery": "^3.2.1",
+    "sass-loader": "^6.0.6"
   },
   "devDependencies": {
     "webpack": "^3.10.0",
