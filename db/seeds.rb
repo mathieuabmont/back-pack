@@ -1,38 +1,31 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
- Activity.destroy_all
- User.destroy_all
- Step.destroy_all
- Trip.destroy_all
+# Activity.destroy_all
+# User.destroy_all
+# Step.destroy_all
+# Trip.destroy_all
 
 
-p "creating users"
+#p "creating users"
 
-user_rachel = User.new(first_name: 'rachel', last_name: 'Markle',  password: "password", email: 'rachel@gmail.com' )
-user_rachel.remote_photo_url = "http://res.cloudinary.com/alumni/image/upload/v1512492401/rachel_ozgdkv.jpg"
-user_rachel.save
+#user_rachel = User.new(first_name: 'rachel', last_name: 'Markle',  password: "password", email: 'rachel@gmail.com' )
+#user_rachel.remote_photo_url = "http://res.cloudinary.com/alumni/image/upload/v1512492401/rachel_ozgdkv.jpg"
+#user_rachel.save
 
-p "users - done"
-
-
-p "creating a trip"
-trip_rachel = Trip.new(title: "France")
-trip_rachel.save!
-p "trip - done"
+#p "users - done"
 
 
-p "creating 2 steps"
-step_1_rachel = Step.new(title: "Lyon", trip: trip_rachel)
-step_1_rachel.save!
-step_2_rachel = Step.new(title: "Marseille", trip: trip_rachel )
-step_2_rachel.save!
-p "2 steps - done"
+#p "creating a trip"
+#trip_rachel = Trip.new(title: "France")
+#trip_rachel.save!
+#p "trip - done"
+
+
+#p "creating 2 steps"
+#step_1_rachel = Step.new(title: "Lyon", trip: trip_rachel)
+#step_1_rachel.save!
+#step_2_rachel = Step.new(title: "Marseille", trip: trip_rachel )
+#step_2_rachel.save!
+#p "2 steps - done"
 
 
 # p "creating 2 activities pour Lyon"
