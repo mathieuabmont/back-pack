@@ -43,7 +43,7 @@ class TransportsController < ApplicationController
   private
 
   def transport_params
-    params require(:booking).permit(:departure_time, :departure_date, :departure_location, :arrival_time, :arrival_date, :arrival_location)
+    params require(:transport).permit(:departure_time, :departure_date, :departure_location, :arrival_time, :arrival_date, :arrival_location)
   end
 
 end
