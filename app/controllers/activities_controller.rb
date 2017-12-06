@@ -34,6 +34,12 @@ end
 
 def update
   @activity =Activity.find(params[:id])
+  photo = picture_scraper(@activity.url)
+  if photo
+    @activity.photo = photo
+  else
+    # TO DO HERE => placeholder
+  end
   if @activity.update(activity_params)
     redirect_to activity_path(@activity)
   else
