@@ -1,0 +1,9 @@
+edit activity
+
+<% if current_user %>
+  <%= simple_form_for [@step, @activity] do |f| %>
+    <%= f.input :title, placeholder: "Mon incroyable roadtrip" %>
+    <%= f.input :url, placeholder: "Article de blog, site de restaurant ... " %>
+    <%= f.submit "Ajouter"%>
+  <% end %>
+<% end %>
