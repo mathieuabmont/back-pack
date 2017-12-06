@@ -15,7 +15,7 @@ class TicketsController < ApplicationController
     # @ticket.user = current_user
     # authorize @ticket
     if @ticket.save
-      redirect_to ticket_path(@ticket)
+      redirect_to transport_ticket_path(@transport_ticket)
     else
       render :new
     end
