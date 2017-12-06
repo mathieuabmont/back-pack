@@ -1,5 +1,6 @@
 class TicketsController < ApplicationController
   def show
+    @transport = Transport.find(params[:transport_id])
     @ticket = Ticket.find(params[:id])
   end
 
