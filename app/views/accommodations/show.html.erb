@@ -1,13 +1,17 @@
 show de l'accommodation
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <%= render 'shared/card-accommodation', accommodation: @accommodation %>
+    </div>
+  </div>
+</div>
+
 <ul>
   <li><%= @accommodation.category %></li>
   <li><%= @accommodation.name %></li>
   <li><%= @accommodation.location %></li>
   <li><%= @accommodation.arrival_date %></li>
   <li><%= @accommodation.departure_date %></li>
-  <li><%= @accommodation.url %></li>
-  <li><%= image_tag @accommodation.photo %></li>
 </ul>
-
-<%= link_to 'Modifier', edit_accommodation_path(@accommodation) %>
