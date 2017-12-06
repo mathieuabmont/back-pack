@@ -21,7 +21,7 @@ class AccommodationsController < ApplicationController
     end
     @accommodation.step = @step
     if @accommodation.save
-      redirect_to accommodation_path(@accommodation)
+      redirect_to new_step_activity_path(@step)
     else
       render :new
     end
@@ -69,5 +69,4 @@ class AccommodationsController < ApplicationController
       end
     end
   end
-
 end
