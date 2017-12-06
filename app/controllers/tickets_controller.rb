@@ -10,12 +10,12 @@ class TicketsController < ApplicationController
 
   def create
     @transport = Transport.find(params[:transport_id])
-    @ticket = ticket.new(ticket_params)
+    @ticket = Ticket.new(ticket_params)
     @ticket.transport = @transport
     # @ticket.user = current_user
     # authorize @ticket
     if @ticket.save
-      redirect_to transport_ticket_path(@transport_ticket)
+      redirect_to transport_ticket_path(@transport)
     else
       render :new
     end
@@ -34,6 +34,6 @@ class TicketsController < ApplicationController
   private
 
   def ticket_params
-    params require(:ticket).permit(:photo)
+    params.require(:ticket).permit(:photo)
   end
 end
