@@ -1,0 +1,12 @@
+<ul>
+  <h2>My trips </h2>
+  <% @trips.each do |trip| %>
+    <% if trip.steps.first.nil? %>
+     <li><%= link_to trip.title, new_trip_step_path(trip)%></li>
+    <% else %>
+      <li><%= link_to trip.title, trip_steps_path(trip)%></li>
+      <% end %>
+  <% end %>
+</ul>
+
+<%= link_to "Ajouter un voyage", new_trip_path %>

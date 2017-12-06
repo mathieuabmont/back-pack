@@ -1,7 +1,7 @@
 class Step < ApplicationRecord
   belongs_to :trip
-  has_many :transports
+  has_one :transport
   has_many :activities
-  has_many :accommodations
+  has_one :accommodation
   validates :title, presence: true
 end
