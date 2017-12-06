@@ -12,10 +12,12 @@ class TicketsController < ApplicationController
     @transport = Transport.find(params[:transport_id])
     @ticket = Ticket.new(ticket_params)
     @ticket.transport = @transport
+    @ticket.user = current_user
     # @ticket.user = current_user
     # authorize @ticket
+
     if @ticket.save
-      redirect_to transport_ticket_path(@transport)
+      redirect_to transport_ticket_path(@transport, @ticket)
     else
       render :new
     end
