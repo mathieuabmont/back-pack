@@ -1,6 +1,12 @@
 <ul>
-  <h2>My steps </h2>
+  <h2>My steps</h2>
   <% @steps.each do |step| %>
-  <li><%= link_to step.title, new_step_transport_path(step, Transport.new)%></li>
+    <% if step.transport.nil? %>
+      <li><%= link_to step.title, new_step_transport_path(step)%></li>
+    <% else %>
+      <li><%= link_to step.title, transport_path(step.transport)%></li>
+    <% end %>
   <% end %>
 </ul>
+
+<%= link_to "Ajouter une étape", new_trip_step_path(@trip) %>
