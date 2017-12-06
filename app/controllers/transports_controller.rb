@@ -16,7 +16,7 @@ class TransportsController < ApplicationController
     # @transport.user = current_user
     # authorize @transport
     if @transport.save
-      redirect_to transport_path(@transport)
+      redirect_to new_step_accommodation_path(@step)
     else
       render :new
     end
