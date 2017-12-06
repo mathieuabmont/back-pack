@@ -1,6 +1,10 @@
+
+<h2> Où allez-vous ?</h2>
+
 <% if current_user %>
   <%= simple_form_for [@itinerary, @trip] do |f| %>
-    <%= f.input :title, placeholder: "France 2017" %>
-    <%= f.submit "Add"%>
+    <%= f.input :title, placeholder: "Entrez une destination" %>
+    <%= f.submit "valider"%>
   <% end %>
 <% end %>
+
