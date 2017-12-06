@@ -1,6 +1,9 @@
+<h2> Précisez votre première étape : </h2>
+
 <% if current_user %>
   <%= simple_form_for [@trip, @step] do |f| %>
     <%= f.input :title, placeholder: "Marseille" %>
     <%= f.submit "Add"%>
   <% end %>
 <% end %>
+

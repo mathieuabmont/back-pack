@@ -14,7 +14,7 @@ class StepsController < ApplicationController
     @step = Step.new(step_params)
     @step.trip = @trip
     if @step.save
-      redirect_to trip_steps_path(@trip)
+      redirect_to new_step_transport_path(@step)
     else
       render :new
     end

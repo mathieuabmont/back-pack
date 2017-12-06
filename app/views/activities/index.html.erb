@@ -2,12 +2,18 @@ Index/Activities
 
 <div class="container">
   <div class="row">
-    <% @prestations.each do |activity| %>
-      <div class="col-xs-12 col-sm-4">
-        <%= render 'shared/cards-activity'%>
+    <% @activities.each do |activity| %>
+      <div class="col-sm-4">
+        <%= render 'shared/cards-activity', activity: activity %>
       </div>
     <% end %>
+    <div class="col-sm-4">
+      <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))";>
+        <div class="card-description">
+          <h1>+</h1>
+        </div>
+        <%= link_to 'Ajouter', new_step_activity_path(@step), class:'card-link' %>
+      </div>
+    </div>
   </div>
 </div>
-
-<%#= link_to 'Modifier', edit_step_activity_path(@step, @activity) %>

@@ -6,6 +6,12 @@ def show
   @activity = Activity.find(params[:id])
 end
 
+def index
+  @step = Step.find(params[:step_id])
+  @activities = Activity.all
+  @step.activities = @activities
+end
+
 def new
   @step = Step.find(params[:step_id])
   @activity = Activity.new
@@ -49,7 +55,9 @@ end
 
 def destroy
   @activity = Activity.find(params[:id])
+  @step = @activity.step
   @activity.destroy
+  redirect_to step_activities_path(@step)
 end
 
 private
