@@ -12,3 +12,9 @@ flatpickr("#transport_departure_date", {
 }
 )
 
+flatpickr("#accommodation_arrival_date", {
+  altinput: true,
+  plugins: [new rangePlugin({ input: "#accommodation_departure_date"})]
+}
+)
+
