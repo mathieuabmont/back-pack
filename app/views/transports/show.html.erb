@@ -1,4 +1,4 @@
-Show/transport
+<h2> Show du transport  </h2>
 
 <ul>
   <li><%= @transport.departure_location %> </li>
@@ -9,5 +9,6 @@ Show/transport
   <li><%= @transport.arrival_location %> </li>
 </ul>
 
-
  <p> <%= link_to 'edit', edit_transport_path(@transport) %> </p>
+
+<%= link_to "TICKET", new_transport_ticket_path(@transport), class: "btn"%>
