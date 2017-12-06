@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
@@ -12,5 +14,8 @@ Rails.application.routes.draw do
     resources :transports, only: [:new, :create]
   end
 
-  resources :transports, only: [:show, :edit, :update, :destroy]
+  resources :transports, only: [:show, :edit, :update, :destroy] do
+    resources :tickets, only: [:show, :new, :create, :edit, :update, :destroy]
+  end
+
 end
