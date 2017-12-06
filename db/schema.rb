@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171205181457) do
+
+ActiveRecord::Schema.define(version: 20171206105019) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +27,7 @@ ActiveRecord::Schema.define(version: 20171205181457) do
     t.string "location"
     t.datetime "arrival_date"
     t.datetime "departure_date"
+    t.string "photo"
     t.index ["step_id"], name: "index_accommodations_on_step_id"
   end
 
