@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :transports, only: [:edit, :update, :destroy] do
+  resources :transports, only: [:show, :edit, :update, :destroy] do
     resources :tickets, only: [:show, :new, :create, :edit, :update, :destroy]
   end
 
