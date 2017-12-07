@@ -4,6 +4,7 @@ class AccommodationsController < ApplicationController
 
   def show
     @accommodation = Accommodation.find(params[:id])
+    @step = @accommodation.step
   end
 
   def new
@@ -22,7 +23,7 @@ class AccommodationsController < ApplicationController
     end
     @accommodation.step = @step
     if @accommodation.save
-      redirect_to new_step_activity_path(@step)
+      redirect_to accommodation_path(@accommodation)
     else
       render :new
     end
