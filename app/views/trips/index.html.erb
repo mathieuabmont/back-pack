@@ -4,7 +4,7 @@
     <% if trip.steps.first.nil? %>
       <li><%= link_to trip.title, new_trip_step_path(trip)%></li>
     <% else %>
-      <li><%= link_to trip.title, trip_steps_path(trip)%> <%= link_to 'edit', edit_trip_path(trip) %> <%= link_to 'Supprimer', trip_path(trip), method: :delete %></li>
+      <li><%= link_to trip.title, trip_steps_path(trip)%> <%= link_to 'edit', edit_trip_path(trip) %> <%= link_to 'Supprimer', trip_path(trip), method: :delete, data: {confirm: "êtes-vous sûr ?"} %></li>
     <% end %>
   <% end %>
 </ul>
