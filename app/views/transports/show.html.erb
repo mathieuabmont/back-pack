@@ -1,14 +1,19 @@
-<h2> Show du transport  </h2>
+<div class="scrollable full-height">
+  <h2> Show du transport  </h2>
 
-<ul>
-  <li><%= @transport.departure_location %> </li>
-  <li><%= @transport.departure_time %> </li>
-  <li><%= @transport.departure_date %> </li>
-  <li><%= @transport.arrival_date %> </li>
-  <li><%= @transport.arrival_time %> </li>
-  <li><%= @transport.arrival_location %> </li>
-</ul>
+  <ul>
+    <li><%= @transport.departure_location %> </li>
+    <li><%= @transport.departure_time %> </li>
+    <li><%= @transport.departure_date %> </li>
+    <li><%= @transport.arrival_date %> </li>
+    <li><%= @transport.arrival_time %> </li>
+    <li><%= @transport.arrival_location %> </li>
+  </ul>
 
- <p> <%= link_to 'edit', edit_transport_path(@transport) %> </p>
 
-<%= link_to "TICKET", new_transport_ticket_path(@transport), class: "btn"%>
+   <p> <%= link_to 'Modifier', edit_transport_path(@transport) %> </p>
+  <%= link_to "TICKET", new_transport_ticket_path(@transport), class: "btn"%>
+</div>
+
+
+<%= render 'navbutton-transport' %>

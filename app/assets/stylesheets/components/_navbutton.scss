@@ -1,0 +1,33 @@
+.footer {
+  background: linear-gradient(45deg, #5CC9F5, #00FD9E);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0px 20px;
+  color: rgba(0,0,0,0.3);
+}
+.navbtn {
+  padding: 0px;
+  margin: 0px;
+  background-size: cover !important;
+}
+#index_steps {
+  width: 50px;
+}
+#ticket {
+  width: 50px;
+}
+#accomodation {
+  width: 40px;
+}
+#activity {
+  width: 60px;
+}
+.navbutton-links {
+  display: flex;
+  align-items: center;
+}
+.navbutton-links a:hover {
+  opacity: 1;
+}
