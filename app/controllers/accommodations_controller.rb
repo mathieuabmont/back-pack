@@ -31,10 +31,12 @@ class AccommodationsController < ApplicationController
 
   def edit
     @accommodation = Accommodation.find(params[:id])
+    @step = @accommodation.step
   end
 
   def update
     @accommodation = Accommodation.find(params[:id])
+    @step = @accommodation.step
     photo = picture_scraper(@accommodation.url)
     if photo
       @accommodation.photo = photo
