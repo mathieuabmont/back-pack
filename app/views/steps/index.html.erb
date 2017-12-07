@@ -4,7 +4,9 @@
     <% if step.transport.nil? %>
       <li><%= link_to step.title, new_step_transport_path(step)%></li>
     <% else %>
-      <li><%= link_to step.title, transport_path(step.transport)%></li>
+      <li><%= link_to step.title, transport_path(step.transport)%>
+       <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'
+        .html_safe, edit_step_path(step) %></li>
     <% end %>
   <% end %>
 </ul>

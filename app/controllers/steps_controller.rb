@@ -27,12 +27,15 @@ class StepsController < ApplicationController
   def update
     @step = Step.find(params[:id])
     @step.update(step_params)
+    @trip = @step.trip
+    redirect_to trip_steps_path(@trip)
   end
 
   def destroy
     @step = Step.find(params[:id])
     @step.destroy
-    redirect_to steps_path
+    @trip = @step.trip
+    redirect_to trip_steps_path(@trip)
   end
 
   private
