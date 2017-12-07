@@ -10,5 +10,7 @@
 </ul>
 
  <p> <%= link_to 'edit', edit_transport_path(@transport) %> </p>
+ <p> <%= link_to 'accomodation', accommodation_path(@transport.step.accommodation) %></p>
+ <p> <%#= link_to "activities", step_activity_path(@transport.step.activity) %></p>
 
 <%= link_to "TICKET", new_transport_ticket_path(@transport), class: "btn"%>
