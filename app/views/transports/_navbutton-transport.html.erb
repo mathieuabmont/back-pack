@@ -1,0 +1,37 @@
+<div class="footer">
+
+    <div class="navbtn" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+      <%= image_tag 'ticket_icon.png', class: :navbtn, id: :ticket %>
+    </div>
+
+    <div class="navbtn">
+      <% if @accommodation %>
+        <%= link_to accommodation_path(@step.accommodation) do %>
+          <%= image_tag 'accommodation_icon.png', class: :navbtn, id: :accomodation %>
+        <% end %>
+      <% else %>
+        <%= link_to new_step_accommodation_path(@step) do %>
+          <%= image_tag 'accommodation_icon.png', class: :navbtn, id: :accomodation %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="navbtn">
+      <% if @step.activities.blank? %>
+        <%= link_to new_step_activity_path(@step) do %>
+          <%= image_tag 'activity_icon.png', class: :navbtn, id: :activity %>
+        <% end %>
+      <% else %>
+        <%= link_to step_activities_path(@step) do %>
+          <%= image_tag 'activity_icon.png', class: :navbtn, id: :activity %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="navbtn">
+      <%= link_to trip_steps_path(@step.trip) do %>
+        <%= image_tag 'index_steps.png', class: :navbtn, id: :index_steps %>
+      <% end %>
+    </div>
+
+</div>

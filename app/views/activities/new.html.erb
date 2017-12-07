@@ -1,9 +1,11 @@
-new activity
-
-<% if current_user %>
-  <%= simple_form_for [@step, @activity] do |f| %>
-    <%= f.input :title, placeholder: "Mon incroyable roadtrip" %>
-    <%= f.input :url, placeholder: "Collez ici votre url" %>
-    <%= f.submit "Add"%>
+<div class="scrollable full-height">
+  <% if current_user %>
+    <%= simple_form_for [@step, @activity] do |f| %>
+      <%= f.input :title, placeholder: "Mon incroyable roadtrip" %>
+      <%= f.input :url, placeholder: "Collez ici votre url" %>
+      <%= f.submit "Add"%>
+    <% end %>
   <% end %>
-<% end %>
+</div>
+
+<%#= render 'shared/navbutton-activities' %>

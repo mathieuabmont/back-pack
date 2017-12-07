@@ -1,17 +1,21 @@
-show de l'accommodation
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <%= render 'shared/card-accommodation', accommodation: @accommodation %>
+<div class="scrollable full-height">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <%= render 'shared/card-accommodation', accommodation: @accommodation %>
+      </div>
     </div>
   </div>
-</div>
 
-<ul>
-  <li><%= @accommodation.category %></li>
-  <li><%= @accommodation.name %></li>
-  <li><%= @accommodation.location %></li>
-  <li><%= @accommodation.arrival_date %></li>
-  <li><%= @accommodation.departure_date %></li>
-</ul>
+  <ul>
+    <li><%= @accommodation.category %></li>
+    <li><%= @accommodation.name %></li>
+    <li><%= @accommodation.location %></li>
+    <li><%= @accommodation.arrival_date %></li>
+    <li><%= @accommodation.departure_date %></li>
+  </ul>
+</div>
+<%# supprimer btn puis redirect to index de step %>
+<%#= link_to 'Supprimer', activity_path(@activity), method: :delete %>
+
+<%= render 'navbutton-accommodation' %>
