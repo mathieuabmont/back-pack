@@ -23,5 +23,6 @@ Rails.application.routes.draw do
 
   resources :accommodations, only: [:show, :edit, :update, :destroy]
   resources :activities, only: [:show, :edit, :update, :destroy]
+  resources :profils, only: [:show]
 
 end
