@@ -9,8 +9,7 @@ end
 
 def index
   @step = Step.find(params[:step_id])
-  @activities = Activity.all
-  @step.activities = @activities
+  @activities = Activity.where(step: @step)
 end
 
 def new

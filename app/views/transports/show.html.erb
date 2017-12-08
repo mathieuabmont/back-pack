@@ -12,8 +12,8 @@
 
 
 
- <%= link_to 'Modifier', edit_transport_path(@transport), class: 'btn-bleu' %>
- <%= link_to 'Supprimer', transport_path(@transport), method: :delete, class: 'btn-bleu' %>
+ <%= link_to 'Modifier', edit_transport_path(@transport), class: 'btn btn-bleu' %>
+ <%= link_to 'Supprimer', transport_path(@transport), method: :delete, class: 'btn btn-bleu' %>
 
     <%= link_to (@transport.ticket.nil? ? new_transport_ticket_path(@transport) : transport_ticket_path(@transport, @ticket)) do %>
       </h2> TICKET </h2>
