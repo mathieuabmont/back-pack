@@ -13,7 +13,7 @@ p "creating users"
 
 user_rachel = User.new(first_name: 'rachel', last_name: 'Markle',  password: "password", email: 'rachel@gmail.com' )
 user_rachel.remote_photo_url = "http://res.cloudinary.com/alumni/image/upload/v1512492401/rachel_ozgdkv.jpg"
-user_rachel.save
+user_rachel.save!
 
 p "users - done"
 
@@ -45,7 +45,8 @@ p "1 transport - done"
 
 
 p "creating 1 ticket pour Lyon"
-ticket_1_lyon = Ticket.new.remote_photo_url = "http://res.cloudinary.com/alumni/image/upload/v1512726684/billettrain_c76aiz.jpg"
+ticket_1_lyon = Ticket.new
+ticket_1_lyon.remote_photo_url = "http://res.cloudinary.com/alumni/image/upload/v1512726684/billettrain_c76aiz.jpg"
 ticket_1_lyon.save!
 p "1 ticket - done"
 
