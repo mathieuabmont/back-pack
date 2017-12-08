@@ -5,7 +5,7 @@
     </div>
 
     <div class="navbtn">
-      <% if @accommodation %>
+      <% if @step.accommodation %>
         <%= link_to accommodation_path(step.accommodation) do %>
           <%= image_tag 'accommodation_icon.png', class: :navbtn, id: :accomodation %>
         <% end %>

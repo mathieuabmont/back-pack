@@ -1,7 +1,7 @@
 <div class="footer">
 
     <div class="navbtn" >
-      <% if @transport %>
+      <% if @step.transport %>
         <%= link_to transport_path(step.transport) do %>
           <%= image_tag 'ticket_icon.png', class: :navbtn, id: :ticket %>
         <% end %>
