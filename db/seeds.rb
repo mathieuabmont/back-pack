@@ -36,10 +36,10 @@ step_2_rachel = Step.new(title: "Marseille", trip: trip_rachel )
 step_2_rachel.save!
 p "2 steps - done"
 
-
+some_date = 4.days.ago
 
 p "creating 1 transport pour Lyon"
-transport_1_lyon = Transport.new(departure_date: "2017-27-12", departure_location: "Paris", departure_time: "15h12", arrival_location: "Lyon", arrival_date: "2017-27-12", arrival_time: "19H12", step: step_1_rachel )
+transport_1_lyon = Transport.new(departure_date: some_date, departure_location: "Paris", departure_time: "15h12", arrival_location: "Lyon", arrival_date: some_date, arrival_time: "19H12", step: step_1_rachel )
 transport_1_lyon.save!
 p "1 transport - done"
 
@@ -70,7 +70,7 @@ p "1 ticket - done"
 
 
  p "creating 1 logement pour Lyon"
- accommodation_lyon = Accommodation.new(category: "Airbnb", name: "appart 6eme", url: "https://www.airbnb.fr/rooms/20966587?location=lyon%20loft", location: "Lyon", arrival_date: "2017-27-12", departure_date: "2017-27-12", photo: "https://a0.muscache.com/im/pictures/62488862/377052e8_original.jpg?aki_policy=xx_large", step: step_1_rachel )
+ accommodation_lyon = Accommodation.new(category: "Airbnb", name: "appart 6eme", url: "https://www.airbnb.fr/rooms/20966587?location=lyon%20loft", location: "Lyon", arrival_date: some_date, departure_date: some_date, photo: "https://a0.muscache.com/im/pictures/62488862/377052e8_original.jpg?aki_policy=xx_large", step: step_1_rachel )
  accommodation_lyon.save!
  p "1 logement - done"
 
