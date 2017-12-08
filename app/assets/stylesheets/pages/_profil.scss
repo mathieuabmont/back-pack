@@ -54,6 +54,11 @@
   color: black;
   text-shadow: none;
 }
+.card-body.remove {
+  display: none;
+  visibility: hidden;
+}
+
 .information {
   margin-top: 25px;
   margin-left: 30px;
