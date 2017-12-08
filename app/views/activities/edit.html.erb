@@ -8,5 +8,7 @@
   <% end %>
 </div>
 
+<%= link_to 'Supprimer', activity_path(@activity), method: :delete, class: 'btn' %>
+
 <%= render 'navbutton-activity', step: @step %>
 
