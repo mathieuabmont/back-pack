@@ -1,7 +1,7 @@
 <div class="scrollable full-height">
   <div id="transport">
     <% if current_user %>
-      <%= simple_form_for [@step, @transport] do |f| %>
+      <%= simple_form_for @transport do |f| %>
         <%= f.input :departure_location %>
         <%= f.input :departure_time%>
         <%= f.input :departure_date, placeholder: "2017-12-4", as: :string, input_html: {class: "datepicker"}%>
@@ -14,4 +14,4 @@
   </div>
 </div>
 
-<%= render 'navbutton-transport' %>
+<%= render 'navbutton-transport', step: @step %>

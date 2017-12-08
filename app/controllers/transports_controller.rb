@@ -26,10 +26,12 @@ class TransportsController < ApplicationController
 
   def edit
     @transport = Transport.find(params[:id])
+    @step = @transport.step
   end
 
   def update
     @transport =Transport.find(params[:id])
+    @step = @transport.step
     if @transport.update(transport_params)
       redirect_to transport_path(@transport)
     else

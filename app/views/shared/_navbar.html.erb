@@ -21,9 +21,9 @@
         <div class="dropdown" id="dropdown-navbar">
           <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li><a href="#">Some mobile link</a></li>
-            <li><a href="#">Other one</a></li>
-            <li><a href="#">Other one</a></li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+            <%= t(".sign_out", default: "Log out") %>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -33,3 +33,5 @@
     <% end %>
   </div>
 </div>
+
+

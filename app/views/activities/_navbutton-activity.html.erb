@@ -2,11 +2,11 @@
 
     <div class="navbtn" >
       <% if @transport %>
-        <%= link_to transport_path(@step.transport) do %>
+        <%= link_to transport_path(step.transport) do %>
           <%= image_tag 'ticket_icon.png', class: :navbtn, id: :ticket %>
         <% end %>
       <% else %>
-        <%= link_to new_step_transport_path(@step) do %>
+        <%= link_to new_step_transport_path(step) do %>
           <%= image_tag 'ticket_icon.png', class: :navbtn, id: :ticket %>
         <% end %>
       <% end %>
@@ -14,11 +14,11 @@
 
     <div class="navbtn">
       <% if @accommodation %>
-        <%= link_to accommodation_path(@step.accommodation) do %>
+        <%= link_to accommodation_path(step.accommodation) do %>
           <%= image_tag 'accommodation_icon.png', class: :navbtn, id: :accomodation %>
         <% end %>
       <% else %>
-        <%= link_to new_step_accommodation_path(@step) do %>
+        <%= link_to new_step_accommodation_path(step) do %>
           <%= image_tag 'accommodation_icon.png', class: :navbtn, id: :accomodation %>
         <% end %>
       <% end %>
@@ -29,7 +29,7 @@
     </div>
 
     <div class="navbtn">
-      <%= link_to trip_steps_path(@step.trip) do %>
+      <%= link_to trip_steps_path(step.trip) do %>
         <%= image_tag 'index_steps.png', class: :navbtn, id: :index_steps %>
       <% end %>
     </div>
