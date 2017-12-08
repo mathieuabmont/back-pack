@@ -12,4 +12,7 @@
     <% end %>
   <% end %>
 </div>
+
+<%= link_to 'Supprimer', accommodation_path(@accommodation), method: :delete, class: 'btn' %>
+
 <%= render 'navbutton-accommodation', step: @step %>
