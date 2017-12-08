@@ -3,6 +3,7 @@ class TransportsController < ApplicationController
   def show
     @transport = Transport.find(params[:id])
     @step = @transport.step
+    @ticket = @transport.ticket
   end
 
   def new

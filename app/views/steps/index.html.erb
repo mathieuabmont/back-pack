@@ -5,17 +5,18 @@
     <div class="card-step">
       <div class="card-step-description">
         </h2><%= step.title %></h2>
+        <%= link_to edit_step_path(step) do %>
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        <% end %>
       </div>
     </div>
   <% end %>
 
-  <%= link_to edit_step_path(step) do %>
-    <i class="fa fa-pencil" aria-hidden="true"></i>
-  <% end %>
+
 <% end %>
 
 
-<div class="btn btn-step"> <%= link_to "Ajouter une étape", new_trip_step_path(@trip) %>
+<div class="btn btn-bleu"> <%= link_to "Ajouter une étape", new_trip_step_path(@trip) %>
 
 </div>
 

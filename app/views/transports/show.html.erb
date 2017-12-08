@@ -11,8 +11,15 @@
   </ul>
 
 
-   <p> <%= link_to 'Modifier', edit_transport_path(@transport) %> </p>
-  <%= link_to "TICKET", new_transport_ticket_path(@transport), class: "btn"%>
+ <p> <%= link_to 'Modifier', edit_transport_path(@transport) %> </p>
+
+
+    <%= link_to (@transport.ticket.nil? ? new_transport_ticket_path(@transport) : transport_ticket_path(@transport, @ticket)) do %>
+      </h2> TICKET </h2>
+      <% end %>
+
+
+  <!-- <%= link_to "TICKET", new_transport_ticket_path(@transport), class: "btn"%> -->
 </div>
 
 
