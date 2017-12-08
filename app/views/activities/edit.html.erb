@@ -1,12 +1,12 @@
-edit activity
-
-<% if current_user %>
-  <%= simple_form_for [@step, @activity] do |f| %>
-    <%= f.input :title, placeholder: "Mon incroyable roadtrip" %>
-    <%= f.input :url, placeholder: "Article de blog, site de restaurant ... " %>
-    <%= f.submit "Ajouter"%>
+<div class="scrollable full-height">
+  <% if current_user %>
+    <%= simple_form_for @activity do |f| %>
+      <%= f.input :title, placeholder: "Mon incroyable roadtrip" %>
+      <%= f.input :url, placeholder: "Article de blog, site de restaurant ... " %>
+      <%= f.submit "Ajouter"%>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
-<%= link_to 'Skip', edit_activity_path(@activity) %>
+<%= render 'navbutton-activity', step: @step %>
 

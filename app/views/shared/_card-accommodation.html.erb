@@ -1,7 +1,0 @@
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path accommodation.photo, height: 300, width: 400, crop: :fill %>')";>
-    <div class="card-description">
-      <h2><%= accommodation.name %></h2>
-    </div>
-    <%= link_to '', accommodation.url, class:'card-link' %>
-</div>
-<div class="card-edit"><%= link_to 'Modifier', edit_accommodation_path(accommodation) %></div>

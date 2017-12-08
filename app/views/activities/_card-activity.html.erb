@@ -1,7 +1,7 @@
 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path activity.photo, height: 300, width: 400, crop: :fill %>')";>
       <div class="card-description">
         <h2><%= activity.title %></h2>
-      </div>
       <%= link_to '', activity_path(activity), class:'card-link' %>
-    <div class="card-edit"><%= link_to 'Modifier', edit_activity_path(activity) %></div>
+      </div>
+    <div><%= link_to 'Modifier', edit_activity_path(activity) %></div>
 </div>

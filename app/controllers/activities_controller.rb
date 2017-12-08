@@ -4,6 +4,7 @@ class ActivitiesController < ApplicationController
 
 def show
   @activity = Activity.find(params[:id])
+  @step = @activity.step
 end
 
 def index
@@ -22,13 +23,13 @@ def create
   @activity = Activity.new(activity_params)
   photo = picture_scraper(@activity.url)
   @activity.step = @step
-  if photo
-    @activity.photo = photo
+  if photo == 0
+    @activity.photo = "https://picsum.photos/400/400"
   else
-    # TO DO HERE => placeholder
+    @activity.photo = photo
   end
   if @activity.save
-    redirect_to activity_path(@activity)
+    redirect_to step_activities_path(@step)
   else
     render :new
   end
@@ -36,15 +37,17 @@ end
 
 def edit
   @activity = Activity.find(params[:id])
+  @step = @activity.step
 end
 
 def update
   @activity =Activity.find(params[:id])
+  @step = @activity.step
   photo = picture_scraper(@activity.url)
   if photo
     @activity.photo = photo
   else
-    # TO DO HERE => placeholder
+    @activity.photo = "https://picsum.photos/400/400"
   end
   if @activity.update(activity_params)
     redirect_to activity_path(@activity)
