@@ -61,9 +61,10 @@ p "1 ticket - done"
 
 
  p "creating 2 activities pour Marseille"
- activity_1_lyon = Activity.new(title: "Vieux Port", url:"http://www.marseille-tourisme.com/fr/decouvrir-marseille/les-incontournables/le-vieux-port/", photo: "https://marseille-syndic.fr/wp-content/uploads/2015/06/LSI-Marseille-Vieux-Port.jpg", step: step_1_rachel)
- activity_1_lyon.save!
- activity_2_lyon = Activity.new(title: "Tournois de pétanque", url:"http://www.marseille.fr/siteagenda/jsp/site/Portal.jsp?page=agendaculturel&id=13EVT000765", photo: "http://alimentation-generale.fr/alim/wp-content/uploads/2016/03/Sucre.jpg")
+ activity_1_marseille = Activity.new(title: "Vieux Port", url:"http://www.marseille-tourisme.com/fr/decouvrir-marseille/les-incontournables/le-vieux-port/", photo: "https://marseille-syndic.fr/wp-content/uploads/2015/06/LSI-Marseille-Vieux-Port.jpg", step: step_2_rachel)
+ activity_1_marseille.save!
+ activity_2_marseille = Activity.new(title: "Tournois de pétanque", url:"http://www.marseille.fr/siteagenda/jsp/site/Portal.jsp?page=agendaculturel&id=13EVT000765", photo: "http://alimentation-generale.fr/alim/wp-content/uploads/2016/03/Sucre.jpg", step: step_2_rachel)
+ activity_2_marseille.save!
  p "2 activities - done"
 
 
