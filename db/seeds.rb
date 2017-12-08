@@ -70,7 +70,7 @@ p "1 ticket - done"
 
 
  p "creating 1 logement pour Lyon"
- accommodation_lyon = Accommodation.new(category: "Airbnb", name: "appart 6eme", url: "https://www.airbnb.fr/rooms/20966587?location=lyon%20loft", location: "Lyon", arrival_date: some_date, departure_date: some_date, photo: "https://a0.muscache.com/im/pictures/62488862/377052e8_original.jpg?aki_policy=xx_large", step: step_1_rachel )
+ accommodation_lyon = Accommodation.new(category: "Airbnb", name: "appart 6eme", url: "https://www.airbnb.fr/rooms/20966587?location=lyon%20loft", location: "13 rue des Saint-Pères, 69006 Lyon", arrival_date: some_date, departure_date: some_date, photo: "https://a0.muscache.com/im/pictures/62488862/377052e8_original.jpg?aki_policy=xx_large", step: step_1_rachel )
  accommodation_lyon.save!
  p "1 logement - done"
 
