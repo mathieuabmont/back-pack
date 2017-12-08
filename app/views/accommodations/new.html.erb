@@ -11,7 +11,7 @@
               <%= f.input :name, placeholder: "Airbnb rue Oberkampf" %>
               <%= f.input :location, placeholder: "120 rue Oberkampf" %>
               <%= f.input :arrival_date, placeholder: "2017-12-1", as: :string, input_html: {class: "datepicker"}%>
-              <%= f.input :departure_date, placeholder: "2017-12-2", as: :string%>
+              <%= f.input :departure_date, placeholder: "2017-12-2", as: :string, input_html: {class: "datepicker"} %>
               <%= f.input :url, placeholder: "http://www.airbnb/monnumerodereservation" %>
               <%= f.button :submit, "Ajouter", class: "btn-bleu" %>
             <% end %>
