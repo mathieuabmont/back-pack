@@ -55,7 +55,7 @@ p "1 ticket - done"
  p "creating 2 activities pour Lyon"
  activity_1_lyon = Activity.new(title: "Basilique Notre-Dame", url:"http://www.blog-in-lyon.fr", photo: "http://a401.idata.over-blog.com/600x446/1/83/03/55/album-nature/2-album-nature/4-ALBUM-NATURE/8-a--CATHEDRALE-ST-JEAN-VIEUX-LYON-ET-VUE-BASILIQUE-FOURVIE.jpg", step: step_1_rachel)
  activity_1_lyon.save!
- activity_2_lyon = Activity.new(title: "Sucre", url:"https://lyon.citycrunch.fr", photo: "http://a401.idata.over-blog.com/600x446/1/83/03/55/album-nature/2-album-nature/4-ALBUM-NATURE/8-a--CATHEDRALE-ST-JEAN-VIEUX-LYON-ET-VUE-BASILIQUE-FOURVIE.jpg",step: step_1_rachel )
+ activity_2_lyon = Activity.new(title: "Sucre", url:"https://lyon.citycrunch.fr", photo: "http://alimentation-generale.fr/alim/wp-content/uploads/2016/03/Sucre.jpg",step: step_1_rachel )
  activity_2_lyon.save!
  p "2 activities - done"
 
@@ -63,14 +63,14 @@ p "1 ticket - done"
  p "creating 2 activities pour Marseille"
  activity_1_marseille = Activity.new(title: "Vieux Port", url:"http://www.marseille-tourisme.com/fr/decouvrir-marseille/les-incontournables/le-vieux-port/", photo: "https://marseille-syndic.fr/wp-content/uploads/2015/06/LSI-Marseille-Vieux-Port.jpg", step: step_2_rachel)
  activity_1_marseille.save!
- activity_2_marseille = Activity.new(title: "Tournois de pétanque", url:"http://www.marseille.fr/siteagenda/jsp/site/Portal.jsp?page=agendaculturel&id=13EVT000765", photo: "http://alimentation-generale.fr/alim/wp-content/uploads/2016/03/Sucre.jpg", step: step_2_rachel)
+ activity_2_marseille = Activity.new(title: "Tournois de pétanque", url:"http://www.marseille.fr/siteagenda/jsp/site/Portal.jsp?page=agendaculturel&id=13EVT000765", photo: "https://images.sudouest.fr/2017/08/28/59a3c29266a4bdfb2e3a3b03/widescreen/1000x500/la-partie-de-petanque-a-degenere-samedi-soir-a-begles.jpg", step: step_2_rachel)
  activity_2_marseille.save!
  p "2 activities - done"
 
 
 
  p "creating 1 logement pour Lyon"
- accommodation_lyon = Accommodation.new(category: "Airbnb", name: "appart 6eme", url: "https://www.airbnb.fr/rooms/20966587?location=lyon%20loft", location: "Lyon", arrival_date: "2017-27-12", departure_date: "2017-27-12", photo: "http://www.lesbuffetsduvieuxport.com/site/images/vignette/5183a724c42ca.jpg", step: step_1_rachel )
+ accommodation_lyon = Accommodation.new(category: "Airbnb", name: "appart 6eme", url: "https://www.airbnb.fr/rooms/20966587?location=lyon%20loft", location: "Lyon", arrival_date: "2017-27-12", departure_date: "2017-27-12", photo: "https://a0.muscache.com/im/pictures/62488862/377052e8_original.jpg?aki_policy=xx_large", step: step_1_rachel )
  accommodation_lyon.save!
  p "1 logement - done"
 
