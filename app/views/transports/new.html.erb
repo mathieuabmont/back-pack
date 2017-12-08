@@ -1,17 +1,28 @@
-<div class="scrollable full-height">
-  <div id="transport">
-    <% if current_user %>
-      <%= simple_form_for [@step, @transport] do |f| %>
-        <%= f.input :departure_location %>
-        <%= f.input :departure_time%>
-        <%= f.input :departure_date, placeholder: "2017-12-4", as: :string, input_html: {class: "datepicker"}%>
-        <%= f.input :arrival_date, placeholder: "2017-12-5", as: :string%>
-        <%= f.input :arrival_time %>
-        <%= f.input :arrival_location %>
-        <%= f.submit "Add"%>
-      <% end %>
-    <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login">
+
+        <div class="scrollable full-height">
+          <div id="transport">
+            <% if current_user %>
+              <%= simple_form_for [@step, @transport] do |f| %>
+                <%= f.input :departure_location %>
+                <%= f.input :departure_time%>
+                <%= f.input :departure_date, placeholder: "2017-12-4", as: :string, input_html: {class: "datepicker"}%>
+                <%= f.input :arrival_date, placeholder: "2017-12-5", as: :string%>
+                <%= f.input :arrival_time %>
+                <%= f.input :arrival_location %>
+                <%= f.button :submit, "Ajouter", class: "btn-blue" %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </div>
+
 
 <%= render 'navbutton-transport', step: @step %>

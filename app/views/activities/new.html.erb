@@ -1,11 +1,21 @@
-<div class="scrollable full-height">
-  <% if current_user %>
-    <%= simple_form_for [@step, @activity] do |f| %>
-      <%= f.input :title, placeholder: "Mon incroyable roadtrip" %>
-      <%= f.input :url, placeholder: "Collez ici votre url" %>
-      <%= f.submit "Add"%>
-    <% end %>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login">
+
+        <div class="scrollable full-height">
+          <% if current_user %>
+            <%= simple_form_for [@step, @activity] do |f| %>
+              <%= f.input :title, placeholder: "Se balader au Vieux Port" %>
+              <%= f.input :url, placeholder: "http://www.marseille-tourisme.com/fr/decouvrir-marseille/les-incontournables/le-vieux-port/" %>
+              <%= f.button :submit, "Ajouter", class: "btn-blue" %>
+            <% end %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </div>
 
 <%= render 'navbutton-activity', step: @step  %>
