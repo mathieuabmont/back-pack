@@ -11,8 +11,8 @@
       <%= f.submit "Add"%>
     <% end %>
   <% end %>
+  <%= link_to 'Supprimer', accommodation_path(@accommodation), method: :delete, class: 'btn-bleu' %>
 </div>
 
-<%= link_to 'Supprimer', accommodation_path(@accommodation), method: :delete, class: 'btn' %>
 
 <%= render 'navbutton-accommodation', step: @step %>

@@ -10,9 +10,9 @@
       <li><%= @accommodation.departure_date %></li>
     </ul>
   </div>
+  <%= link_to 'Supprimer', accommodation_path(@accommodation), method: :delete, class: 'btn-bleu' %>
+  <%= link_to 'Modifier', edit_accommodation_path(@accommodation), class: 'btn-bleu' %>
 </div>
 
-<%= link_to 'Supprimer', accommodation_path(@accommodation), method: :delete, class: 'btn' %>
-<%= link_to 'Modifier', edit_accommodation_path(@accommodation), class: 'btn' %>
 
 <%= render 'navbutton-accommodation', step: @step %>

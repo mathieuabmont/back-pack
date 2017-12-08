@@ -12,8 +12,8 @@
       <% end %>
     <% end %>
   </div>
+  <%= link_to 'Supprimer', transport_path(@transport), method: :delete, class: 'btn-bleu' %>
 </div>
 
-<%= link_to 'Supprimer', transport_path(@transport), method: :delete, class: 'btn' %>
 
 <%= render 'navbutton-transport', step: @step %>

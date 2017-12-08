@@ -6,9 +6,9 @@
       <%= f.submit "Ajouter"%>
     <% end %>
   <% end %>
+  <%= link_to 'Supprimer', activity_path(@activity), method: :delete, class: 'btn-bleu' %>
 </div>
 
-<%= link_to 'Supprimer', activity_path(@activity), method: :delete, class: 'btn' %>
 
 <%= render 'navbutton-activity', step: @step %>
 
