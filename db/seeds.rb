@@ -46,7 +46,7 @@ p "1 transport - done"
 
 p "creating 1 ticket pour Lyon"
 ticket_1_lyon = Ticket.new(transport: transport_1_lyon, user: user_rachel)
-ticket_1_lyon.remote_photo_url = "http://res.cloudinary.com/alumni/image/upload/v1512726684/billettrain_c76aiz.jpg"
+ticket_1_lyon.remote_photo_url = "http://res.cloudinary.com/alumni/image/upload/v1512743047/flashcode_nw9fmu.png"
 ticket_1_lyon.save!
 p "1 ticket - done"
 
@@ -62,7 +62,7 @@ p "1 ticket - done"
 
 
  p "creating 1 logement pour Lyon"
- accommodation_lyon = Accommodation.new(category: "airbnb", name: "appart 6eme", url: "https://www.airbnb.fr/rooms/20966587?location=lyon%20loft", location: "Lyon", arrival_date: "2017-27-12", departure_date: "2017-27-12", photo: "", step: step_1_rachel )
+ accommodation_lyon = Accommodation.new(category: "Airbnb", name: "appart 6eme", url: "https://www.airbnb.fr/rooms/20966587?location=lyon%20loft", location: "Lyon", arrival_date: "2017-27-12", departure_date: "2017-27-12", photo: "", step: step_1_rachel )
  accommodation_lyon.save!
  p "1 logement - done"
 
