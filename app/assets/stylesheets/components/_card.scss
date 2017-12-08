@@ -36,3 +36,16 @@
 .card-link:hover {
   opacity: 0.1;
 }
+
+.activity-card {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
