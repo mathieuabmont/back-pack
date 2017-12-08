@@ -45,7 +45,7 @@ p "1 transport - done"
 
 
 p "creating 1 ticket pour Lyon"
-ticket_1_lyon = Ticket.new
+ticket_1_lyon = Ticket.new(transport: transport_1_lyon, user: user_rachel)
 ticket_1_lyon.remote_photo_url = "http://res.cloudinary.com/alumni/image/upload/v1512726684/billettrain_c76aiz.jpg"
 ticket_1_lyon.save!
 p "1 ticket - done"
@@ -58,6 +58,13 @@ p "1 ticket - done"
  activity_2_lyon = Activity.new(title: "Basilique Notre Dame", url:"https://lyon.citycrunch.fr", photo: "http://a401.idata.over-blog.com/600x446/1/83/03/55/album-nature/2-album-nature/4-ALBUM-NATURE/8-a--CATHEDRALE-ST-JEAN-VIEUX-LYON-ET-VUE-BASILIQUE-FOURVIE.jpg",step: step_1_rachel )
  activity_2_lyon.save!
  p "2 activities - done"
+
+
+
+ p "creating 1 logement pour Lyon"
+ accommodation_lyon = Accommodation.new(category: "airbnb", name: "appart 6eme", url: "https://www.airbnb.fr/rooms/20966587?location=lyon%20loft", location: "Lyon", arrival_date: "2017-27-12", departure_date: "2017-27-12", photo: "", step: step_1_rachel )
+ accommodation_lyon.save!
+ p "1 logement - done"
 
 
 
