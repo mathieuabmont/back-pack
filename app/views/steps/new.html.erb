@@ -1,9 +1,24 @@
-<h2> Précisez votre première étape : </h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login">
 
-<% if current_user %>
-  <%= simple_form_for [@trip, @step] do |f| %>
-    <%= f.input :title, placeholder: "Marseille" %>
-    <%= f.submit "Add"%>
-  <% end %>
-<% end %>
+        <h2> Précisez votre première étape : </h2>
+
+        <% if current_user %>
+          <%= simple_form_for [@trip, @step] do |f| %>
+            <%= f.input :title, placeholder: "Marseille" %>
+            <%= f.button :submit, "Ajouter", class: "btn-bleu" %>
+          <% end %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 

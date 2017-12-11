@@ -1,10 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login">
 
-<h2> Où allez-vous ?</h2>
+        <h2> Où allez-vous ?</h2>
 
-<% if current_user %>
-  <%= simple_form_for [@itinerary, @trip] do |f| %>
-    <%= f.input :title, placeholder: "Entrez une destination" %>
-    <%= f.submit "valider"%>
-  <% end %>
-<% end %>
+        <% if current_user %>
+          <%= simple_form_for [@itinerary, @trip] do |f| %>
+            <%= f.input :title, placeholder: "Entrez une destination" %>
+            <%= f.button :submit, "Ajouter", class: "btn-bleu" %>
+          <% end %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
 

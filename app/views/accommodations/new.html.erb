@@ -1,16 +1,27 @@
-<div id="accommodation" class="scrollable full-height">
-  <% if current_user %>
-    <%= simple_form_for [@step, @accommodation] do |f| %>
-      <%= f.input :category, as: :radio_buttons,
-      collection: ['Hôtel', 'Airbnb', 'Auberge de jeunesse', "Chez l'habitant", 'Autre'], wrapper: :vertical_radio_and_checkboxes %>
-      <%= f.input :name, placeholder: "Airbnb rue Oberkampf" %>
-      <%= f.input :location, placeholder: "120 rue Oberkampf" %>
-      <%= f.input :arrival_date, placeholder: "2017-12-1", as: :string, input_html: {class: "datepicker"}%>
-      <%= f.input :departure_date, placeholder: "2017-12-2", as: :string%>
-      <%= f.input :url, placeholder: "http://www.airbnb/monnumerodereservation" %>
-      <%= f.submit "Add"%>
-    <% end %>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login">
+
+        <div id="accommodation" class="scrollable full-height">
+          <% if current_user %>
+            <%= simple_form_for [@step, @accommodation] do |f| %>
+              <%= f.input :category, as: :radio_buttons,
+              collection: ['Hôtel', 'Airbnb', 'Auberge de jeunesse', "Chez l'habitant", 'Autre'], wrapper: :vertical_radio_and_checkboxes %>
+              <%= f.input :name, placeholder: "Airbnb rue Oberkampf" %>
+              <%= f.input :location, placeholder: "120 rue Oberkampf" %>
+              <%= f.input :arrival_date, placeholder: "2017-12-1", as: :string, input_html: {class: "datepicker"}%>
+              <%= f.input :departure_date, placeholder: "2017-12-2", as: :string, input_html: {class: "datepicker"} %>
+              <%= f.input :url, placeholder: "http://www.airbnb/monnumerodereservation" %>
+              <%= f.button :submit, "Ajouter", class: "btn-bleu" %>
+            <% end %>
+          <% end %>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
 </div>
 
 <%= render 'navbutton-accommodation', step: @step %>
