@@ -2,11 +2,13 @@ class StepsController < ApplicationController
   def index
     @trip = Trip.find(params[:trip_id])
     @steps = Step.where(trip: @trip)
+    @trips = policy_scope(Trip)
   end
 
   def new
     @trip = Trip.find(params[:trip_id])
     @step = Step.new
+    authorize @step
   end
 
   def create
@@ -18,13 +20,16 @@ class StepsController < ApplicationController
     else
       render :new
     end
+    authorize @step
   end
 
   def edit
     @step = Step.find(params[:id])
+    authorize @step
   end
 
   def update
+    authorize @step
     @step = Step.find(params[:id])
     @step.update(step_params)
     @trip = @step.trip
@@ -36,6 +41,7 @@ class StepsController < ApplicationController
     @step.destroy
     @trip = @step.trip
     redirect_to trip_steps_path(@trip)
+    authorize @step
   end
 
   private

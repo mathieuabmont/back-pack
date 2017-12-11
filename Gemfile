@@ -20,6 +20,7 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 gem 'omniauth-facebook'
 gem 'nokogiri'
+gem 'pundit'
 
 group :development, :test do
   gem 'pry-byebug'

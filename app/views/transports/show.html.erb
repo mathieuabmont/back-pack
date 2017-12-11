@@ -15,8 +15,12 @@
     </h2> TICKET </h2>
   <% end %>
 
-  <%= link_to 'Modifier', edit_transport_path(@transport), class: 'btn btn-bleu' %>
-  <%= link_to 'Supprimer', transport_path(@transport), method: :delete, class: 'btn btn-bleu' %>
+  <% if policy(@transport).update? %>
+    <%= link_to 'Modifier', edit_transport_path(@transport), class: 'btn btn-bleu' %>
+  <% end %>
+  <% if policy(@transport).update %>
+    <%= link_to 'Supprimer', transport_path(@transport), method: :delete, class: 'btn btn-bleu' %>
+  <% end %>
 
   <!-- <%#= link_to "TICKET", new_transport_ticket_path(@transport), class: "btn"%> -->
 

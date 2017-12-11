@@ -1,10 +1,11 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trip.all
+    @trips = policy_scope(Trip)
   end
 
   def new
     @trip = Trip.new
+    authorize @trip
   end
 
   def create
@@ -16,16 +17,19 @@ class TripsController < ApplicationController
     else
       render :new
     end
+    authorize @trip
   end
 
   def edit
     @trip = Trip.find(params[:id])
+    authorize @trip
   end
 
   def update
     @trip = Trip.find(params[:id])
     @trip.update(trip_params)
     redirect_to trips_path
+    authorize @trip
 
   end
 
@@ -33,6 +37,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @trip.destroy
     redirect_to trips_path
+    authorize = @trip
   end
 
   private

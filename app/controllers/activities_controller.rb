@@ -5,16 +5,18 @@ class ActivitiesController < ApplicationController
 def show
   @activity = Activity.find(params[:id])
   @step = @activity.step
+  authorize @activity
 end
 
 def index
   @step = Step.find(params[:step_id])
-  @activities = Activity.where(step: @step)
+  @activities = policy_scope(Activity).where(step: @step)
 end
 
 def new
   @step = Step.find(params[:step_id])
-  @activity = Activity.new
+  @activity = Activity.new(step: @step)
+  authorize @activity
 end
 
 def create
@@ -22,6 +24,7 @@ def create
   @activity = Activity.new(activity_params)
   photo = picture_scraper(@activity.url)
   @activity.step = @step
+  authorize @activity
   if photo == 0
     @activity.photo = "https://picsum.photos/400/400"
   else
@@ -37,12 +40,14 @@ end
 def edit
   @activity = Activity.find(params[:id])
   @step = @activity.step
+  authorize @activity
 end
 
 def update
   @activity =Activity.find(params[:id])
   @step = @activity.step
   photo = picture_scraper(@activity.url)
+  authorize @activity
   if photo == 0
     @activity.photo = "https://picsum.photos/400/400"
   else
@@ -60,6 +65,7 @@ def destroy
   @step = @activity.step
   @activity.destroy
   redirect_to step_activities_path(@step)
+  authorize @activity
 end
 
 private

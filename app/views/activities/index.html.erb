@@ -11,7 +11,9 @@
           <div class="card-description">
             <h1>+++</h1>
           </div>
-          <%= link_to 'Ajouter', new_step_activity_path(@step), class:'card-link' %>
+          <% if policy(Activity.new(step: @step)).create? %>
+            <%= link_to 'Ajouter', new_step_activity_path(@step), class:'card-link' %>
+          <% end %>
         </div>
       </div>
     </div>
