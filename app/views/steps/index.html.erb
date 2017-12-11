@@ -1,32 +1,25 @@
-
-<div class="form-login">
- <p> Partager ce voyage avec des amis :</p>
-  <% if current_user %>
-    <%= simple_form_for [@trip, @invitation] do |f| %>
-      <%= f.input :email, placeholder: "emilie.dupont@gmail.com" %>
-      <%= f.button :submit, "Inviter", class: "btn-bleu" %>
-    <% end %>
-  <% end %>
-</div>
-
-
-<h3>Vos étapes :</h3>
-
-<% @steps.each do |step| %>
-  <%= link_to (step.transport.nil? ? new_step_transport_path(step) : transport_path(step.transport)) do %>
-    <div class="card-step">
-      <div class="card-step-description">
-        </h2><%= step.title %></h2>
-        <%= link_to edit_step_path(step) do %>
-          <i class="fa fa-pencil" aria-hidden="true"></i>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login">
+       <p> Partager ce voyage avec des amis :</p>
+        <% if current_user %>
+          <%= simple_form_for [@trip, @invitation] do |f| %>
+            <%= f.input :email, placeholder: "emilie.dupont@gmail.com" %>
+            <%= f.button :submit, "Inviter", class: "btn-bleu" %>
+          <% end %>
         <% end %>
       </div>
+      <h3>Vos étapes :</h3>
+
+      <% @steps.each do |step| %>
+        <div class="col-xs-12 col-sm-4">
+          <%= render 'card-steps', step: step %>
+        </div>
+      <% end %>
+
+      <div class="btn btn-bleu"> <%= link_to "Ajouter une étape", new_trip_step_path(@trip) %>
+      </div>
     </div>
-  <% end %>
-<% end %>
-
-
-<div class="btn btn-bleu"> <%= link_to "Ajouter une étape", new_trip_step_path(@trip) %>
-
+  </div>
 </div>
-

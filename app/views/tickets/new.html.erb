@@ -1,14 +1,22 @@
-<h1>Tickets#new</h1>
-<p>Please upload your ticket</p>
+<div class="scrollable full-height">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <div class="form-login">
 
+          <p>Ajoute ton billet</p>
 
-<div id="ticket">
-  <% if current_user %>
-    <%= simple_form_for [@transport, @ticket] do |f| %>
+          <div id="ticket">
+            <% if current_user %>
+              <%= simple_form_for [@transport, @ticket] do |f| %>
+                <%= f.input :photo %>
+                <%= f.button :submit, "Ajouter", class: "btn-bleu" %>
+              <% end %>
+            <% end %>
+          </div>
 
-      <%= f.input :photo %>
-
-      <%= f.submit "Add"%>
-    <% end %>
-  <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

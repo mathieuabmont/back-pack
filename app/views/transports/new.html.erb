@@ -1,9 +1,8 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <div class="form-login">
-
-        <div class="scrollable full-height">
+<div class="scrollable full-height">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <div class="form-login">
           <div id="transport">
             <% if current_user %>
               <%= simple_form_for [@step, @transport] do |f| %>
@@ -18,7 +17,6 @@
             <% end %>
           </div>
         </div>
-
       </div>
     </div>
   </div>

@@ -1,6 +1,16 @@
-<% if current_user %>
-  <%= simple_form_for [@trip, @step] do |f| %>
-    <%= f.input :title %>
-    <%= f.submit "Edit" %>
-  <% end %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login">
+
+        <% if current_user %>
+          <%= simple_form_for [@trip, @step] do |f| %>
+            <%= f.input :title %>
+            <%= f.button :submit, "Modifier", class: "btn-bleu" %>
+          <% end %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

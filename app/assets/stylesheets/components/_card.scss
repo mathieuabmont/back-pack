@@ -14,9 +14,14 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
+  width: 100%;
+
 }
 .card-description h2 {
   font-size: 24px;
+  a {
+    text-align: left;
+  }
 }
 .card-description p {
   font-size: 14px;
@@ -29,7 +34,6 @@
   bottom: 0;
   right: 0;
   width: 100%;
-  z-index: 2;
   background: black;
   opacity: 0;
 }
@@ -48,4 +52,8 @@
   padding-bottom: 10px;
   margin-bottom: 15px;
   margin-top: 15px;
+}
+
+#modifier {
+  z-index: 2;
 }

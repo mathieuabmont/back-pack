@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20171211160941) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(version: 20171211160941) do
     t.bigint "trip_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.index ["trip_id"], name: "index_steps_on_trip_id"
   end
 
@@ -95,6 +97,7 @@ ActiveRecord::Schema.define(version: 20171211160941) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
   end
 
   create_table "users", force: :cascade do |t|
