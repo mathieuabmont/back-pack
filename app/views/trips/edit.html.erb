@@ -1,7 +1,17 @@
-<h2> Vous souhaitez modifier votre voyage ?</h2>
-<% if current_user %>
-  <%= simple_form_for [@itinerary, @trip] do |f| %>
-    <%= f.input :title %>
-    <%= f.submit "Change" %>
-  <% end %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login">
+
+        <h2> Vous souhaitez modifier votre voyage ?</h2>
+        <% if current_user %>
+          <%= simple_form_for [@itinerary, @trip] do |f| %>
+            <%= f.input :title %>
+            <%= f.button :submit, "Modifier", class: "btn-bleu" %>
+          <% end %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

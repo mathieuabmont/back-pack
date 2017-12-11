@@ -1,18 +1,16 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <div class="form-login">
-
-        <div class="scrollable full-height">
+<div class="scrollable full-height">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <div class="form-login">
           <% if current_user %>
             <%= simple_form_for [@step, @activity] do |f| %>
               <%= f.input :title, placeholder: "Se balader au Vieux Port" %>
               <%= f.input :url, placeholder: "http://www.marseille-tourisme.com/fr/decouvrir-marseille/les-incontournables/le-vieux-port/" %>
-              <%= f.button :submit, "Ajouter", class: "btn-bleu" %>
+              <%= f.button :submit, "Ajouter", class: "btn btn-bleu" %>
             <% end %>
           <% end %>
         </div>
-
       </div>
     </div>
   </div>
