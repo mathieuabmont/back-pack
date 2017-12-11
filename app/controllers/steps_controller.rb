@@ -2,6 +2,9 @@ class StepsController < ApplicationController
   def index
     @trip = Trip.find(params[:trip_id])
     @steps = Step.where(trip: @trip)
+
+    @itinerary = @trip.itineraries.where(user_id: current_user.id).first
+    @invitation = Invitation.new
   end
 
   def new

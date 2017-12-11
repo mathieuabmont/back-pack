@@ -3,4 +3,5 @@ class Trip < ApplicationRecord
   has_many :steps, dependent: :destroy
   has_many :itineraries, dependent: :destroy
   has_many :users, through: :itineraries
+  has_many :invitations
 end

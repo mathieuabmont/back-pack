@@ -6,8 +6,10 @@ Rails.application.routes.draw do
 
   root to: 'trips#index'
   resources :trips, except: [:show] do
+    resources :invitations, only: [:create]
     resources :steps, only: [:index, :new, :create] do
     end
+
   end
 
   resources :steps, only: [:edit, :update, :destroy] do
@@ -24,5 +26,7 @@ Rails.application.routes.draw do
   resources :accommodations, only: [:show, :edit, :update, :destroy]
   resources :activities, only: [:show, :edit, :update, :destroy]
   resources :profils, only: [:show]
-
+  resources :itineraries, only: [:show]
 end
+
+
