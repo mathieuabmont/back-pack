@@ -1,20 +1,22 @@
-<h3>Vos étapes :</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="wrapper">
 
-<% @steps.each do |step| %>
-  <%= link_to (step.transport.nil? ? new_step_transport_path(step) : transport_path(step.transport)) do %>
-    <div class="card-step">
-      <div class="card-step-description">
-        </h2><%= step.title %></h2>
-        <%= link_to edit_step_path(step) do %>
-          <i class="fa fa-pencil" aria-hidden="true"></i>
+        <h3>Vos étapes :</h3>
+
+        <% @steps.each do |step| %>
+          <div class="col-xs-12 col-sm-4">
+            <%= render 'card-steps', step: step %>
+          </div>
         <% end %>
+
+
+        <div class="btn btn-bleu"> <%= link_to "Ajouter une étape", new_trip_step_path(@trip) %>
+
+        </div>
+
       </div>
     </div>
-  <% end %>
-<% end %>
-
-
-<div class="btn btn-bleu"> <%= link_to "Ajouter une étape", new_trip_step_path(@trip) %>
-
+  </div>
 </div>
-

@@ -1,54 +1,8 @@
-.card-step {
-  height: 175px;
-  background: linear-gradient(45deg, #5CC9F5, #00FD9E);
-  background-size: cover !important;
-  background-position: center;
-  color: white;
-  position: relative;
-  box-shadow: 8px 8px 12px #aaa;
-
-  }
-
-.card-step-description {
+.fa-pencil {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
-}
-
-.card-step-description a {
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
   color: white;
 }
 
-.card-step-description  {
-  h2 {
-    font-size: 50px;
-    color: white;
-  }
-
-}
-
-.card-step-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 2;
-  background: black;
-  opacity: 0;
-}
-.card-step-link:hover {
-  opacity: 0.1;
-}
-
-// #fa-pencil {
-//   position: absolute;
-//   bottom: 10px;
-//   right: 10px;
-// }
-
-.btn-step {
-  border-radius: 2px;
-
-
-}
