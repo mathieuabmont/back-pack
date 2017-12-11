@@ -14,9 +14,14 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
+  width: 100%;
+
 }
 .card-description h2 {
   font-size: 24px;
+  a {
+    text-align: left;
+  }
 }
 .card-description p {
   font-size: 14px;
