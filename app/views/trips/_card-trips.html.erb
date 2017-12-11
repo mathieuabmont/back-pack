@@ -1,0 +1,29 @@
+<% if trip.photo.nil? %>
+  <div class="activity-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "maps.jpg", height: 300, width: 400, crop: :fill %>')">
+    <div class="card-description">
+      <h2><%= trip.title %></h2>
+      <% if trip.steps.nil? %>
+        <%= link_to '',  new_trip_step_path(trip), class:'card-link' %>
+      <% else %>
+        <%= link_to '', trip_steps_path(trip), class:'card-link' %>
+      <% end %>
+    </div>
+    <%= link_to edit_trip_path(trip) do %>
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+    <% end %>
+  </div>
+<% else %>
+  <div class="activity-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path trip.photo, height: 300, width: 400, crop: :fill %>')";>
+    <div class="card-description">
+      <h2><%= trip.title %></h2>
+      <% if trip.steps.nil? %>
+        <%= link_to '',  new_trip_step_path(trip), class:'card-link' %>
+      <% else %>
+        <%= link_to '', trip_steps_path(trip), class:'card-link' %>
+      <% end %>
+    </div>
+    <%= link_to edit_trip_path(trip) do %>
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+    <% end %>
+  </div>
+<% end %>
