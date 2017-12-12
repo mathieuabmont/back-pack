@@ -1,11 +1,16 @@
 class TripsController < ApplicationController
   def index
+<<<<<<< HEAD
     @trips = Trip.all
     @invitations = Invitation.where(email: current_user.email, status: "pending")
+=======
+    @trips = policy_scope(Trip).includes(:itineraries).where(itineraries: {user_id: current_user.id})
+>>>>>>> master
   end
 
   def new
     @trip = Trip.new
+    authorize @trip
   end
 
   def create
@@ -18,6 +23,7 @@ class TripsController < ApplicationController
     else
       render :new
     end
+    authorize @trip
   end
 
   def join
@@ -31,12 +37,14 @@ class TripsController < ApplicationController
 
   def edit
     @trip = Trip.find(params[:id])
+    authorize @trip
   end
 
   def update
     @trip = Trip.find(params[:id])
     @trip.update(trip_params)
     redirect_to trips_path
+    authorize @trip
 
   end
 
@@ -44,6 +52,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @trip.destroy
     redirect_to trips_path
+    authorize = @trip
   end
 
 

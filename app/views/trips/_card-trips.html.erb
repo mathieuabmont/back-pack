@@ -1,29 +1,65 @@
-<% if trip.photo.nil? %>
-  <div class="activity-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "maps.jpg", height: 300, width: 400, crop: :fill %>')">
-    <div class="card-description">
-      <h2><%= trip.title %></h2>
-      <% if trip.steps.nil? %>
-        <%= link_to '',  new_trip_step_path(trip), class:'card-link' %>
+<div class="card-trips">
+  <% if trip.photo.nil? %>
+    <div class="trip-card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "maps.jpg", height: 300, width: 400, crop: :fill %>')">
+      <% if trip.steps.empty? %>
+        <% if policy(Step.new(trip: trip)).create? %> <%= link_to "", new_trip_step_path(trip),class: "link-trip"%>
+        <% end %>
+
       <% else %>
-        <%= link_to '', trip_steps_path(trip), class:'card-link' %>
+        <%= link_to "", trip_steps_path(trip), class: "link-trip"%>
+    </div>
+
+    <div class="footer-trips">
+      <h2><%= trip.title %></h2>
+      <div class="footer-icons">
+        <% if policy(trip).update?  %>
+          <div class="circle-icon">
+            <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'
+             .html_safe, edit_trip_path(trip) %>
+          </div>
+        <% end %>
+        <% if policy(trip).destroy? %>
+          <div class="circle-icon">
+             <%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'
+             .html_safe, trip_path(trip),
+             method: :delete, data: {confirm: "êtes-vous sûr ?"} %>
+          </div>
+
+        <% end %>
+      </div>
       <% end %>
     </div>
-    <%= link_to edit_trip_path(trip) do %>
-      <i class="fa fa-pencil" aria-hidden="true"></i>
-    <% end %>
-  </div>
-<% else %>
-  <div class="activity-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path trip.photo, height: 300, width: 400, crop: :fill %>')";>
-    <div class="card-description">
-      <h2><%= trip.title %></h2>
-      <% if trip.steps.nil? %>
-        <%= link_to '',  new_trip_step_path(trip), class:'card-link' %>
+
+  <% else %>
+    <div class="trip-card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path trip.photo, height: 300, width: 400, crop: :fill %>')";>
+      <% if trip.steps.empty? %>
+        <% if policy(Step.new(trip: trip)).create? %> <%= link_to "", new_trip_step_path(trip), class: "link-trip"%>
+        <% end %>
       <% else %>
-        <%= link_to '', trip_steps_path(trip), class:'card-link' %>
+        <%= link_to trip.title, trip_steps_path(trip)%>
+
       <% end %>
     </div>
-    <%= link_to edit_trip_path(trip) do %>
-      <i class="fa fa-pencil" aria-hidden="true"></i>
-    <% end %>
-  </div>
-<% end %>
+
+    <div class="footer-trips">
+      <h2><%= trip.title %></h2>
+      <div class="footer-icons">
+        <% if policy(trip).update?  %>
+          <div class="circle-icon">
+          <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'
+          .html_safe, edit_trip_path(trip) %>
+          </div>
+        <% end %>
+        <% if policy(trip).destroy? %>
+          <div class="circle-icon">
+          <%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'
+          .html_safe, trip_path(trip),
+          method: :delete, data: {confirm: "êtes-vous sûr ?"} %>
+          </div>
+        <% end %>
+      </div>
+  <% end %>
+    </div>
+
+
+</div>

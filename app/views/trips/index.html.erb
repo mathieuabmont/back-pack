@@ -1,16 +1,15 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 
-        <h2>My trips </h2>
-        <% @trips.each do |trip| %>
-          <div class="col-xs-12 col-sm-4">
-            <%= render 'card-trips', trip: trip %>
-          </div>
-        <% end %>
+<div class="list-trips">
+  <h2>Mes voyages </h2>
+  <% if @trips %>
+    <% @trips.each do |trip| %>
+      <div>
+        <%= render 'card-trips', trip: trip %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
-
-        <%= link_to "Ajouter un voyage", new_trip_path, class: 'btn btn-bleu' %>
 
         <div class="form-login">
           <% if current_user %>
@@ -25,4 +24,8 @@
 
     </div>
   </div>
+
+<div>
+  <%= link_to "Ajouter un voyage", new_trip_path, class: 'btn btn-bleu' %>
+
 </div>
