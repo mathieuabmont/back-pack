@@ -1,59 +1,64 @@
-.page-title{
-    font-size: 25px;
-    text-align: center;
-    font-family: lato;
-    font-weight: 100;
+.page-title {
+  font-size: 25px;
+  text-align: center;
+  font-family: lato;
+  font-weight: 100;
+}
+
+.content-transport {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
 }
 
 ul, ol {
-    margin-top: 0;
-    margin-bottom: 12.5px;
-    padding-bottom: 12px;
-    padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 12.5px;
+  padding-bottom: 12px;
+  padding-left: 0;
 }
 
 .transport-date {
-    font-weight: bold;
-    font-size: 35px;
-    text-align: center;
-    margin-bottom: 25px;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 25px;
 }
 
 .transparency-title {
-    text-transform: uppercase;
-    font-size: 16px;
-    /* size: 30px; */
-    font-weight: bold;
-    color: #333333;
-    opacity: 0.4;
-    padding-left: 34px;
+  text-transform: uppercase;
+  font-size: 16px;
+  /* size: 30px; */
+  font-weight: bold;
+  color: #333333;
+  opacity: 0.4;
+  // padding-left: 34px;
 }
 
 .main-info {
-    /* text-transform: uppercase; */
-    font-size: 30px;
-    /* size: 30px; */
-    font-weight: bold;
-    color: #4F4F4F;
-    margin-left: 34px;
+  /* text-transform: uppercase; */
+  font-size: 35px;
+  /* size: 30px; */
+  font-weight: bold;
+  color: #4F4F4F;
+  margin: -5px 0px;
+  // margin-left: 34px;
 }
 
 .secondary-info {
-    font-weight: bold;
-    font-size: 20px;
-    color: #4F4F4F;
-    margin-left: 34px;
+  font-weight: normal;
+  font-size: 20px;
+  color: #4F4F4F;
+  // margin-left: 34px;
 }
 // ne marche pas pour l'instant mais je fixe ce pb de bordure :)
 #trait-destination {
-  border-bottom: 1px solid;
+  border-right: 1px solid;
   color: #333333;
   margin: 0px;
   padding: 0px;
-  width: 306px;
-  margin-bottom: 20px;
+  width: 0px;
+  margin-bottom: 30px;
   position: center;
-  margin-left: 34px;
-  margin-right: 34px;
 }
 
