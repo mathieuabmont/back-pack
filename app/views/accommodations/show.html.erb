@@ -7,7 +7,7 @@
   <% else %>
     <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 50%), url('<%= image_path @accommodation.photo, height: 300, width: 400, crop: :fill %>');">
   <% end %>
-</div>
+
   <div class="banner-content">
     <ul>
       <li><%= @accommodation.name %></li>
@@ -16,13 +16,16 @@
       <li><%= @accommodation.departure_date %></li>
     </ul>
   </div>
+
   <% if policy(@accommodation).update? %>
     <%= link_to 'Modifier', edit_accommodation_path(@accommodation), class: 'btn btn-bleu' %>
   <% end %>
   <% if policy(@accommodation).destroy? %>
     <%= link_to 'Supprimer', accommodation_path(@accommodation), method: :delete, class: 'btn btn-bleu' %>
   <% end %>
+  <%#= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=false&maptype=roadmap&markers=color:red|#{@accommodation.location}&key=AIzaSyDcpKX_kCi-4AcvJt7FiX8D9b-Nz3lMuOk" %>
 </div>
 
 
 <%= render 'navbutton-accommodation', step: @step %>
+
