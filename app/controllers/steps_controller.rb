@@ -18,12 +18,13 @@ class StepsController < ApplicationController
     @step = Step.new(step_params)
     @step.photo = "https://kitt.lewagon.com/placeholder/cities/#{@step.title}"
     @step.trip = @trip
+    authorize @step
+
     if @step.save
       redirect_to new_step_transport_path(@step)
     else
       render :new
     end
-    authorize @step
   end
 
   def edit
@@ -32,8 +33,8 @@ class StepsController < ApplicationController
   end
 
   def update
-    authorize @step
     @step = Step.find(params[:id])
+    authorize @step
     @step.update(step_params)
     @trip = @step.trip
     redirect_to trip_steps_path(@trip)
@@ -41,10 +42,11 @@ class StepsController < ApplicationController
 
   def destroy
     @step = Step.find(params[:id])
+    authorize @step
+
     @step.destroy
     @trip = @step.trip
     redirect_to trip_steps_path(@trip)
-    authorize @step
   end
 
   private
