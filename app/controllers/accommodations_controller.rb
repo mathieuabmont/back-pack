@@ -5,11 +5,13 @@ class AccommodationsController < ApplicationController
   def show
     @accommodation = Accommodation.find(params[:id])
     @step = @accommodation.step
+    authorize @accommodation
   end
 
   def new
     @step = Step.find(params[:step_id])
-    @accommodation = Accommodation.new
+    @accommodation = Accommodation.new(step: @step)
+    authorize @accommodation
   end
 
   def create
@@ -19,6 +21,7 @@ class AccommodationsController < ApplicationController
       @accommodation.url = "https://picsum.photos/400/400"
     end
     photo = picture_scraper(@accommodation.url)
+    authorize @accommodation
     @accommodation.step = @step
     @accommodation.photo = photo
     if @accommodation.save
@@ -31,11 +34,13 @@ class AccommodationsController < ApplicationController
   def edit
     @accommodation = Accommodation.find(params[:id])
     @step = @accommodation.step
+    authorize @accommodation
   end
 
   def update
     @accommodation = Accommodation.find(params[:id])
     @step = @accommodation.step
+    authorize @accommodation
     if @accommodation.url == ""
       @accommodation.url = "https://picsum.photos/400/400"
     end
@@ -51,6 +56,7 @@ class AccommodationsController < ApplicationController
   def destroy
     @accommodation = Accommodation.find(params[:id])
     @accommodation.destroy
+    authorize @accommodation
   end
 
   private
