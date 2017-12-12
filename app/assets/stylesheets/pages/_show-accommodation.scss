@@ -1,6 +1,35 @@
 h2 {
   text-align: center;
+  margin: auto;
 }
-.banner {
-  border-radius: 5px;
+
+.banner-content {
+  padding: 10px;
+  h3{
+    font-size: 25px;
+    // font-weight: bold;
+    color: #4F4F4F;
+    margin-left: 20px;
+    margin-top: 30px;
+  }
+  p{
+    font-size: 20px;
+    color: #4F4F4F;
+    margin-left: 34px;
+  }
+  .date-accommodation{
+    color: black;
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    i{
+      padding: 15px;
+      color: #585858;
+    }
+    background-color: #DDDDDD;
+    margin-left: 33px;
+    margin-right: 33px;
+    margin-top: -50px;
+    border-radius: 3px;
+  }
 }
