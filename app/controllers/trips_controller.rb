@@ -11,6 +11,7 @@ class TripsController < ApplicationController
   def create
     trips = Trip.all
     @trip = Trip.new(trip_params)
+    authorize @trip
     @trip.photo = "https://kitt.lewagon.com/placeholder/cities/#{@trip.title}"
     if @trip.save
       Itinerary.create(user: current_user, trip: @trip)
@@ -18,7 +19,6 @@ class TripsController < ApplicationController
     else
       render :new
     end
-    authorize @trip
   end
 
   def edit
@@ -28,17 +28,16 @@ class TripsController < ApplicationController
 
   def update
     @trip = Trip.find(params[:id])
+    authorize @trip
     @trip.update(trip_params)
     redirect_to trips_path
-    authorize @trip
-
   end
 
   def destroy
     @trip = Trip.find(params[:id])
+    authorize = @trip
     @trip.destroy
     redirect_to trips_path
-    authorize = @trip
   end
 
   private
