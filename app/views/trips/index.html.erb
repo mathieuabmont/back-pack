@@ -12,6 +12,17 @@
 
         <%= link_to "Ajouter un voyage", new_trip_path, class: 'btn btn-bleu' %>
 
+        <div class="form-login">
+          <% if current_user %>
+          <p>Vous avez un code invitation pour rejoindre vos amis ?</p>
+            <%= simple_form_for :invitation, url: join_trips_path do |f| %>
+              <%= f.input :code, placeholder: "code invitation" %>
+              <%= f.button :submit, "Ajouter", class: "btn-bleu" %>
+            <% end %>
+          <% end %>
+
+        </div>
+
     </div>
   </div>
 </div>

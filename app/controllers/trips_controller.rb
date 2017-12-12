@@ -36,6 +36,20 @@ class TripsController < ApplicationController
     redirect_to trips_path
   end
 
+  def join
+    @trips = Trip.all
+    @invitation =
+    # @trip = @invitation.trip
+    # @code = @invitation.code
+    # @email = @invitation.email
+
+    if (@code == '@trip.title') && (@email == @current_user.email)
+
+    else
+    end
+
+  end
+
   private
 
   def trip_params
