@@ -1,27 +1,29 @@
 <div class="scrollable full-height">
   <h2 class="page-title"> Votre prochain déplacement </h2>
   <ul>
-    <li class="transport-date"><%= @transport.departure_date.strftime("%m/%d/%Y") %> </li>
+    <li class="transport-date"><%= @transport.departure_date.strftime("%m/%d") %> </li>
   </ul>
   <div class="content-transport">
-    <ul>
+    <ul class="content-transport-left">
       <li class="transparency-title">From</li>
       <li class="main-info"><%= @transport.departure_time %></li>
       <li class="secondary-info"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= @transport.departure_location %></li>
     </ul>
   <!-- <div id="trait-destination"></div> -->
-    <ul>
+    <ul class="content-transport-right">
       <li class="transparency-title" >To</li>
       <li class="main-info"><%= @transport.arrival_time %></li>
       <li class="secondary-info"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= @transport.arrival_location %></li>
     </ul>
   </div>
 
-  <% if @transport.ticket.nil? %>
-    <%= link_to 'Mon billet', new_transport_ticket_path(@transport), class: 'btn btn-bleu' %>
-  <% else %>
-    <%= link_to 'Mon billet', transport_ticket_path(@transport, @ticket), class: 'btn btn-bleu' %>
-  <% end %>
+  <div class="center-btn">
+    <% if @transport.ticket.nil? %>
+      <%= link_to 'MON BILLET', new_transport_ticket_path(@transport), class: 'btn btn-bleu-lg' %>
+    <% else %>
+      <%= link_to 'MON BILLET', transport_ticket_path(@transport, @ticket), class: 'btn btn-bleu-lg' %>
+    <% end %>
+  </div>
 
   <% if policy(@transport).update? %>
     <%= link_to 'Modifier', edit_transport_path(@transport), class: 'btn btn-bleu' %>
