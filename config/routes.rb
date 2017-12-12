@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   root to: 'trips#index'
   resources :trips, except: [:show] do
+    member do
+      get :join
+    end
     resources :invitations, only: [:create]
     resources :steps, only: [:index, :new, :create] do
     end

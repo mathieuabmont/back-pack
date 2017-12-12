@@ -22,6 +22,7 @@ gem 'omniauth-facebook'
 gem 'nokogiri'
 gem 'pundit'
 gem "letter_opener", group: :development
+gem 'postmark-rails'
 
 group :development, :test do
   gem 'pry-byebug'

@@ -1,5 +1,7 @@
 class TripsController < ApplicationController
   def index
+
+    @invitations = Invitation.where(email: current_user.email, status: "pending")
     @trips = policy_scope(Trip).includes(:itineraries).where(itineraries: {user_id: current_user.id})
   end
 
@@ -21,6 +23,17 @@ class TripsController < ApplicationController
     end
   end
 
+  def join
+    @trip = Trip.find(params[:id])
+    @invitation = Invitation.find(params[:invitation])
+    authorize @invitation
+    @invitation.status = 'accepted'
+    @invitation.save
+    Itinerary.create(user: current_user, trip: @trip)
+    redirect_to trips_path
+
+  end
+
   def edit
     @trip = Trip.find(params[:id])
     authorize @trip
@@ -39,6 +52,8 @@ class TripsController < ApplicationController
     @trip.destroy
     redirect_to trips_path
   end
+
+
 
   private
 

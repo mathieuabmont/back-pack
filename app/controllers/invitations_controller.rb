@@ -6,7 +6,7 @@ class InvitationsController < ApplicationController
     @invitation.trip = @trip
     @invitation.code = "#{@trip.title}"
     @invitation.status = "pending"
-
+    authorize(@invitation)
 
     if @invitation.save
       UserMailer.invite(@invitation).deliver_now
