@@ -7,10 +7,11 @@
       </div>
   <% end %>
  </div>
-      <% if policy(step).edit? %>
-        <%= link_to edit_step_path(step) do %>
-          <i class="fa fa-pencil" aria-hidden="true"></i>
-        <% end %>
-      <% end %>
-
+ <div class="circle-icon">
+  <% if policy(step).edit? %>
+    <%= link_to edit_step_path(step) do %>
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+    <% end %>
+  <% end %>
+</div>
 
