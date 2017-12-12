@@ -2,6 +2,7 @@
 Ticket.destroy_all
 Transport.destroy_all
 Activity.destroy_all
+Accommodation.destroy_all
 Step.destroy_all
 Trip.destroy_all
 User.destroy_all

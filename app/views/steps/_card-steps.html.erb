@@ -4,11 +4,14 @@
   <%= link_to ((step.transport.nil? && policy(Transport.new(step: step)).create?) ? new_step_transport_path(step) : transport_path(step.transport)) do %>
     <div class="step-card-description">
       <h2><%= step.title %></h2>
-    </div>
+      </div>
   <% end %>
+ </div>
+ <div class="circle-icon">
   <% if policy(step).edit? %>
     <%= link_to edit_step_path(step) do %>
       <i class="fa fa-pencil" aria-hidden="true"></i>
     <% end %>
   <% end %>
 </div>
+
