@@ -3,6 +3,8 @@ class StepsController < ApplicationController
     @trip = Trip.find(params[:trip_id])
     @steps = Step.where(trip: @trip)
     @trips = policy_scope(Trip)
+    @itinerary = @trip.itineraries.where(user_id: current_user.id).first
+    @invitation = Invitation.new
   end
 
   def new
@@ -14,6 +16,7 @@ class StepsController < ApplicationController
   def create
     @trip = Trip.find(params[:trip_id])
     @step = Step.new(step_params)
+    @step.photo = "https://kitt.lewagon.com/placeholder/cities/#{@step.title}"
     @step.trip = @trip
     if @step.save
       redirect_to new_step_transport_path(@step)

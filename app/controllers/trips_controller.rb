@@ -11,6 +11,7 @@ class TripsController < ApplicationController
   def create
     trips = Trip.all
     @trip = Trip.new(trip_params)
+    @trip.photo = "https://kitt.lewagon.com/placeholder/cities/#{@trip.title}"
     if @trip.save
       Itinerary.create(user: current_user, trip: @trip)
       redirect_to new_trip_step_path(@trip)

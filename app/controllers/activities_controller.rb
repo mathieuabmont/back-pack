@@ -22,14 +22,13 @@ end
 def create
   @step = Step.find(params[:step_id])
   @activity = Activity.new(activity_params)
+  if @activity.url == ""
+    @activity.url = "https://picsum.photos/400/400"
+  end
   photo = picture_scraper(@activity.url)
+  @activity.photo = photo
   @activity.step = @step
   authorize @activity
-  if photo == 0
-    @activity.photo = "https://picsum.photos/400/400"
-  else
-    @activity.photo = photo
-  end
   if @activity.save
     redirect_to step_activities_path(@step)
   else
@@ -45,14 +44,13 @@ end
 
 def update
   @activity =Activity.find(params[:id])
-  @step = @activity.step
-  photo = picture_scraper(@activity.url)
   authorize @activity
-  if photo == 0
-    @activity.photo = "https://picsum.photos/400/400"
-  else
-    @activity.photo = photo
+  if @activity.url == ""
+    @activity.url = "https://picsum.photos/400/400"
   end
+  photo = picture_scraper(@activity.url)
+  @activity.photo = photo
+  @step = @activity.step
   if @activity.update(activity_params)
     redirect_to step_activities_path(@step)
   else

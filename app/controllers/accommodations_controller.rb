@@ -17,14 +17,13 @@ class AccommodationsController < ApplicationController
   def create
     @step = Step.find(params[:step_id])
     @accommodation = Accommodation.new(accommodation_params)
+    if @accommodation.url == ""
+      @accommodation.url = "https://picsum.photos/400/400"
+    end
     photo = picture_scraper(@accommodation.url)
     authorize @accommodation
     @accommodation.step = @step
-    if photo == 0
-      @accommodation.photo = "https://picsum.photos/400/400"
-    else
-      @accommodation.photo = photo
-    end
+    @accommodation.photo = photo
     if @accommodation.save
       redirect_to accommodation_path(@accommodation)
     else
@@ -41,13 +40,12 @@ class AccommodationsController < ApplicationController
   def update
     @accommodation = Accommodation.find(params[:id])
     @step = @accommodation.step
-    photo = picture_scraper(@accommodation.url)
     authorize @accommodation
-    if photo == 0
-      @accommodation.photo = "https://picsum.photos/400/400"
-    else
-      @accommodation.photo = photo
+    if @accommodation.url == ""
+      @accommodation.url = "https://picsum.photos/400/400"
     end
+    photo = picture_scraper(@accommodation.url)
+    @accommodation.photo = photo
     if @accommodation.update(accommodation_params)
       redirect_to accommodation_path(@accommodation)
     else
