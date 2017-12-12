@@ -1,13 +1,18 @@
 <div class="scrollable full-height">
-  <h2> Show du transport  </h2>
+  <h2 class="page-title"> Votre prochain déplacement </h2>
 
   <ul>
-    <li><%= @transport.departure_location %> </li>
-    <li><%= @transport.departure_time %> </li>
-    <li><%= @transport.departure_date %> </li>
-    <li><%= @transport.arrival_date %> </li>
-    <li><%= @transport.arrival_time %> </li>
-    <li><%= @transport.arrival_location %> </li>
+
+    <li class="transport-date"><%= @transport.departure_date %> </li>
+    <li class="transparency-title">From</li>
+    <li class="main-info"><%= @transport.departure_location %> </li>
+    <li class="secondary-info" ><%= @transport.departure_time %> </li>
+  </ul>
+<div id="trait-destination"></div>
+  <ul>
+    <li class="transparency-title" >To</li>
+    <li class="main-info"><%= @transport.arrival_location %> </li>
+    <li class="secondary-info"><%= @transport.arrival_time %> </li>
   </ul>
 
 

@@ -1,9 +1,12 @@
+
 <div class="list-trips">
   <h2>Mes voyages </h2>
-  <% @trips.each do |trip| %>
-    <div>
-      <%= render 'card-trips', trip: trip %>
-    </div>
+  <% if @trips %>
+    <% @trips.each do |trip| %>
+      <div>
+        <%= render 'card-trips', trip: trip %>
+      </div>
+    <% end %>
   <% end %>
 </div>
 
