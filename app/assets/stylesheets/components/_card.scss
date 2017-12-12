@@ -67,7 +67,7 @@
   position: relative;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 
@@ -79,7 +79,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+
 }
 
 .footer-icons {
@@ -91,6 +93,7 @@
   font-size: 24px;
   font-family: lato;
   text-transform: uppercase;
+
   a {
     text-align: left;
   }
