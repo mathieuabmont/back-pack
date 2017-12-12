@@ -14,7 +14,7 @@
 
         <div class="form-login">
           <% if current_user %>
-          <p>Vous avez un code invitation pour rejoindre vos amis ?</p>
+          <p>Vous avez une invitation sur un voyage </p>
           <% @invitations.each do |invitation| %>
             <%= invitation.trip.title%>
             <%= link_to "Rejoindre",  join_trip_path(invitation.trip, invitation: invitation.id), class: "btn btn-bleu" %>
