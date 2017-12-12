@@ -5,11 +5,11 @@
     <li class="transport-date"><%= @transport.departure_date %> </li>
     <li class="transparency-title">From</li>
     <li class="main-info"><%= @transport.departure_location %> </li>
-    <li class="secondary-info"><%= @transport.departure_time %> </li>
+    <li class="secondary-info" ><%= @transport.departure_time %> </li>
   </ul>
-
+<div id="trait-destination"></div>
   <ul>
-    <li class="transparency-title" id="trait-destination">To</li>
+    <li class="transparency-title" >To</li>
     <li class="main-info"><%= @transport.arrival_location %> </li>
     <li class="secondary-info"><%= @transport.arrival_time %> </li>
   </ul>
