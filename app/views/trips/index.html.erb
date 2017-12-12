@@ -15,10 +15,10 @@
         <div class="form-login">
           <% if current_user %>
           <p>Vous avez un code invitation pour rejoindre vos amis ?</p>
-            <%= simple_form_for :invitation, url: join_trips_path do |f| %>
-              <%= f.input :code, placeholder: "code invitation" %>
-              <%= f.button :submit, "Ajouter", class: "btn-bleu" %>
-            <% end %>
+          <% @invitations.each do |invitation| %>
+            <%= invitation.trip.title%>
+            <%= link_to "Rejoindre",  join_trip_path(invitation.trip, invitation: invitation.id), class: "btn btn-bleu" %>
+          <% end %>
           <% end %>
 
         </div>

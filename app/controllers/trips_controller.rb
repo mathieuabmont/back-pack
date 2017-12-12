@@ -1,6 +1,7 @@
 class TripsController < ApplicationController
   def index
     @trips = Trip.all
+    @invitations = Invitation.where(email: current_user.email, status: "pending")
   end
 
   def new
@@ -17,6 +18,15 @@ class TripsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def join
+    @trip = Trip.find(params[:id])
+    @invitation = Invitation.find(params[:invitation])
+    @invitation.status = 'accepted'
+    @invitation.save
+    Itinerary.create(user: current_user, trip: @trip)
+
   end
 
   def edit
@@ -36,19 +46,7 @@ class TripsController < ApplicationController
     redirect_to trips_path
   end
 
-  def join
-    @trips = Trip.all
-    @invitation =
-    # @trip = @invitation.trip
-    # @code = @invitation.code
-    # @email = @invitation.email
 
-    if (@code == '@trip.title') && (@email == @current_user.email)
-
-    else
-    end
-
-  end
 
   private
 
