@@ -1,29 +1,35 @@
 <% if step.photo.nil? %>
-  <div class="activity-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "maps.jpg", height: 300, width: 400, crop: :fill %>')">
-    <div class="card-description">
-      <h2><%= step.title %></h2>
-      <% if step.transport.nil? %>
-        <%= link_to '', new_step_transport_path(step), class:'card-link' %>
-      <% else %>
-        <%= link_to '', transport_path(step.transport), class:'card-link' %>
-      <% end %>
-    </div>
-    <%= link_to edit_step_path(step) do %>
-      <i class="fa fa-pencil" aria-hidden="true"></i>
+<div class="flexelement">
+  <div class="steps-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "maps.jpg", height: 300, width: 400, crop: :fill %>')">
+  </div>
+  <div class="step-card-description">
+    <h2><%= step.title %></h2>
+    <% if step.transport.nil? %>
+      <%= link_to '', new_step_transport_path(step), class:'card-link' %>
+    <% else %>
+      <%= link_to '', transport_path(step.transport), class:'card-link' %>
     <% end %>
   </div>
+  <%= link_to edit_step_path(step) do %>
+    <i class="fa fa-pencil" aria-hidden="true"></i>
+  <% end %>
+</div>
+
 <% else %>
-  <div class="activity-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path step.photo, height: 300, width: 400, crop: :fill %>')";>
-    <div class="card-description">
-      <h2><%= step.title %></h2>
-      <% if step.transport.nil? %>
-        <%= link_to '', new_step_transport_path(step), class:'card-link' %>
-      <% else %>
-        <%= link_to '', transport_path(step.transport), class:'card-link' %>
-      <% end %>
-    </div>
+<div class="flexelement">
+  <div class="steps-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path step.photo, height: 300, width: 400, crop: :fill %>')";>
+  </div>
+  <div class="step-card-description">
+    <h2><%= step.title %></h2>
+    <% if step.transport.nil? %>
+      <%= link_to '', new_step_transport_path(step), class:'card-link' %>
+    <% else %>
+      <%= link_to '', transport_path(step.transport), class:'card-link' %>
+    <% end %>
+  </div>
     <%= link_to edit_step_path(step) do %>
       <i class="fa fa-pencil" aria-hidden="true"></i>
     <% end %>
   </div>
 <% end %>
+</div>

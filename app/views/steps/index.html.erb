@@ -1,3 +1,15 @@
+
+<div>
+  <h3>Vos étapes :</h3>
+
+  <% @steps.each do |step| %>
+      <%= render 'card-steps', step: step %>
+  <% end %>
+
+  <div class="btn btn-bleu"> <%= link_to "Ajouter une étape", new_trip_step_path(@trip) %>
+  </div>
+</div>
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
@@ -9,16 +21,6 @@
             <%= f.button :submit, "Inviter", class: "btn-bleu" %>
           <% end %>
         <% end %>
-      </div>
-      <h3>Vos étapes :</h3>
-
-      <% @steps.each do |step| %>
-        <div class="col-xs-12 col-sm-4">
-          <%= render 'card-steps', step: step %>
-        </div>
-      <% end %>
-
-      <div class="btn btn-bleu"> <%= link_to "Ajouter une étape", new_trip_step_path(@trip) %>
       </div>
     </div>
   </div>
