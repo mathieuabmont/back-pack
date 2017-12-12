@@ -1,32 +1,14 @@
-<% if step.photo.nil? %>
-  <div class="activity-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "maps.jpg", height: 300, width: 400, crop: :fill %>')">
-    <%= link_to ((step.transport.nil? && policy(Transport.new(step: step)).create?) ? new_step_transport_path(step) : transport_path(step.transport)) do %>
-      <div class="card-step">
-        <div class="card-step-description">
-          </h2><%= step.title %></h2>
-          <% if policy(step).edit? %>
-            <%= link_to edit_step_path(step) do %>
-              <i class="fa fa-pencil" aria-hidden="true"></i>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
+<div class="flexelement">
+  <div class="steps-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path (step.photo.present? ? step.photo : 'maps.jpg'), height: 300, width: 400, crop: :fill %>')";>
   </div>
-<% else %>
-  <div class="activity-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path step.photo, height: 300, width: 400, crop: :fill %>')";>
-    <%= link_to ((step.transport.nil? && policy(Transport.new(step: step)).create?) ? new_step_transport_path(step) : transport_path(step.transport)) do %>
-      <div class="card-step">
-        <div class="card-step-description">
-          </h2><%= step.title %></h2>
-          <% if policy(step).edit? %>
-            <%= link_to edit_step_path(step) do %>
-              <i class="fa fa-pencil" aria-hidden="true"></i>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
+  <%= link_to ((step.transport.nil? && policy(Transport.new(step: step)).create?) ? new_step_transport_path(step) : transport_path(step.transport)) do %>
+    <div class="step-card-description">
+      <h2><%= step.title %></h2>
+    </div>
+  <% end %>
+  <% if policy(step).edit? %>
+    <%= link_to edit_step_path(step) do %>
+      <i class="fa fa-pencil" aria-hidden="true"></i>
     <% end %>
-  </div>
-<% end %>
-
+  <% end %>
+</div>
