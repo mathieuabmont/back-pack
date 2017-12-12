@@ -1,23 +1,17 @@
 <div class="scrollable full-height">
-  <div class="container">
-    <div class="row">
-      <% @activities.each do |activity| %>
-        <div class="col-xs-12 col-sm-4">
-          <%= render 'card-activity', activity: activity %>
-        </div>
-      <% end %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))";>
-          <div class="card-description">
-            <h1>+++</h1>
-          </div>
-          <% if policy(Activity.new(step: @step)).create? %>
-            <%= link_to 'Ajouter', new_step_activity_path(@step), class:'card-link' %>
-          <% end %>
-        </div>
+  <div class="list-trips">
+    <h2>Mes activités</h2>
+    <% @activities.each do |activity| %>
+      <%= render 'card-activity', activity: activity %>
+    <% end %>
+    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))";>
+      <div class="card-description">
+        <h1>+++</h1>
       </div>
+      <% if policy(Activity.new(step: @step)).create? %>
+        <%= link_to 'Ajouter', new_step_activity_path(@step), class:'card-link' %>
+      <% end %>
     </div>
   </div>
 </div>
 <%= render 'navbutton-activity', step: @step %>
-

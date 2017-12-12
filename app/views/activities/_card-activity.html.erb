@@ -1,43 +1,66 @@
-<% if activity.photo.nil? %>
-
-  <div class="activity-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "activity.jpg", height: 300, width: 400, crop: :fill %>')">
-    <div class="card-description">
+<div class="card-trips">
+  <% if activity.photo.nil? %>
+    <div class="trip-card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "activity.jpg", height: 300, width: 400, crop: :fill %>')">
+    </div>
+    <div class="footer-trips">
       <h2><%= activity.title %></h2>
-      <%= link_to '', activity.url, class:'card-link' %>
+      <div class="footer-icons">
+        <% if policy(activity).update?  %>
+          <div class="circle-icon">
+            <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'
+             .html_safe, edit_activity_path(activity) %>
+          </div>
+        <% end %>
+        <% if policy(activity).destroy? %>
+          <div class="circle-icon">
+             <%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'
+             .html_safe, activity_path(activity),
+             method: :delete, data: {confirm: "êtes-vous sûr ?"} %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div>
-      <%= link_to edit_activity_path(activity) do %>
-        <i class="fa fa-pencil" aria-hidden="true"></i>
-      <% end %>
+  <% elsif activity.photo == "0" %>
+    <div class="trip-card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "activity.jpg", height: 300, width: 400, crop: :fill %>')">
     </div>
-  </div>
-
-<% elsif activity.photo == "0" %>
-
-  <div class="activity-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "activity.jpg", height: 300, width: 400, crop: :fill %>')">
-    <div class="card-description">
+    <div class="footer-trips">
       <h2><%= activity.title %></h2>
-      <%= link_to '', activity.url, class:'card-link' %>
+      <div class="footer-icons">
+        <% if policy(activity).update?  %>
+          <div class="circle-icon">
+            <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'
+             .html_safe, edit_activity_path(activity) %>
+          </div>
+        <% end %>
+        <% if policy(activity).destroy? %>
+          <div class="circle-icon">
+             <%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'
+             .html_safe, activity_path(activity),
+             method: :delete, data: {confirm: "êtes-vous sûr ?"} %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div>
-      <%= link_to edit_activity_path(activity) do %>
-        <i class="fa fa-pencil" aria-hidden="true"></i>
-      <% end %>
+  <% else %>
+    <div class="trip-card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path activity.photo, height: 300, width: 400, crop: :fill %>')">
     </div>
-  </div>
-
-<% else %>
-
-  <div class="activity-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path activity.photo, height: 300, width: 400, crop: :fill %>')">
-    <div class="card-description">
+    <div class="footer-trips">
       <h2><%= activity.title %></h2>
-      <%= link_to '', activity.url, class:'card-link' %>
+      <div class="footer-icons">
+        <% if policy(activity).update?  %>
+          <div class="circle-icon">
+            <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'
+             .html_safe, edit_activity_path(activity) %>
+          </div>
+        <% end %>
+        <% if policy(activity).destroy? %>
+          <div class="circle-icon">
+             <%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'
+             .html_safe, activity_path(activity),
+             method: :delete, data: {confirm: "êtes-vous sûr ?"} %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div>
-      <%= link_to edit_activity_path(activity) do %>
-        <i class="fa fa-pencil" aria-hidden="true"></i>
-      <% end %>
-    </div>
-  </div>
-
-<% end %>
+  <% end %>
+</div>
