@@ -6,25 +6,6 @@
   color: white;
 }
 
-.steps-card {
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  background-position: center;
-  color: white;
-  // padding-top: 10px;
-  // padding-bottom: 10px;
-  // margin-bottom: 15px;
-  // margin-top: 15px;
-  width: 40%
-}
-.step-card-description {
-  bottom: 10px;
-  left: 10px;
-  width: 60%;
-  background-color: white;
-  text-align: center;
-}
 .flexelement {
   display: flex;
   justify-content: space-between;
@@ -32,4 +13,27 @@
   padding-bottom: 10px;
   margin-bottom: 15px;
   margin-top: 15px;
+  position: relative;
+  height: 175px;
+  a {
+    width: 60%;
+  }
+}
+.steps-card {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  width: 40%;
+}
+
+.step-card-description {
+  left: 10px;
+  height: 155px;
+  background-color: white;
+  text-align: center;
+  h2 {
+    padding: 0px;
+    margin: 0px;
+  }
 }
