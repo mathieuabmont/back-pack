@@ -1,0 +1,5 @@
+meta_product_name: "Backpack"
+meta_title: "Backpack - Toutes vos infos de voyage en un clic"
+meta_description: "Retrouvez facilement tous vos billets d'avion, vos logements et vos activités pour chaque étape de votre voyage"
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
+twitter_account: "@mathieuabmont"
