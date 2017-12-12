@@ -57,3 +57,10 @@
 #modifier {
   z-index: 2;
 }
+
+.footer-trips {
+  background: white;                          /* White background */
+  padding: 30px;                              /* Internal space */
+  border-radius: 4px;                         /* Small radius */
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
