@@ -21,9 +21,10 @@ class AccommodationsController < ApplicationController
       @accommodation.url = "https://picsum.photos/400/400"
     end
     photo = picture_scraper(@accommodation.url)
-    authorize @accommodation
+
     @accommodation.step = @step
     @accommodation.photo = photo
+    authorize @accommodation
     if @accommodation.save
       redirect_to accommodation_path(@accommodation)
     else

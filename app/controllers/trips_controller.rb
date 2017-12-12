@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
   def index
-    @trips = policy_scope(Trip)
+    @trips = policy_scope(Trip).includes(:itineraries).where(itineraries: {user_id: current_user.id})
   end
 
   def new
