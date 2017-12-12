@@ -4,8 +4,8 @@ class AccommodationsController < ApplicationController
 
   def show
     @accommodation = Accommodation.find(params[:id])
-    @step = @accommodation.step
     authorize @accommodation
+    @step = @accommodation.step
   end
 
   def new
@@ -17,6 +17,7 @@ class AccommodationsController < ApplicationController
   def create
     @step = Step.find(params[:step_id])
     @accommodation = Accommodation.new(accommodation_params)
+    authorize @accommodation
     if @accommodation.url == ""
       @accommodation.url = "https://picsum.photos/400/400"
     end
@@ -24,7 +25,6 @@ class AccommodationsController < ApplicationController
 
     @accommodation.step = @step
     @accommodation.photo = photo
-    authorize @accommodation
     if @accommodation.save
       redirect_to accommodation_path(@accommodation)
     else
@@ -34,14 +34,14 @@ class AccommodationsController < ApplicationController
 
   def edit
     @accommodation = Accommodation.find(params[:id])
-    @step = @accommodation.step
     authorize @accommodation
+    @step = @accommodation.step
   end
 
   def update
     @accommodation = Accommodation.find(params[:id])
-    @step = @accommodation.step
     authorize @accommodation
+    @step = @accommodation.step
     if @accommodation.url == ""
       @accommodation.url = "https://picsum.photos/400/400"
     end
@@ -56,8 +56,8 @@ class AccommodationsController < ApplicationController
 
   def destroy
     @accommodation = Accommodation.find(params[:id])
-    @accommodation.destroy
     authorize @accommodation
+    @accommodation.destroy
   end
 
   private
