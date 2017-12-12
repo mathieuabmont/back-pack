@@ -1,11 +1,9 @@
 class TripsController < ApplicationController
   def index
-<<<<<<< HEAD
-    @trips = Trip.all
+
     @invitations = Invitation.where(email: current_user.email, status: "pending")
-=======
     @trips = policy_scope(Trip).includes(:itineraries).where(itineraries: {user_id: current_user.id})
->>>>>>> master
+
   end
 
   def new
