@@ -1,8 +1,8 @@
 class StepsController < ApplicationController
   def index
     @trip = Trip.find(params[:trip_id])
-    @steps = Step.where(trip: @trip)
-    @trips = policy_scope(Trip)
+    #@trips = policy_scope(Trip)
+    @steps = policy_scope(Step).includes(trip: :itineraries).where(itineraries: {user_id: current_user.id}).where(trip: @trip)
     @itinerary = @trip.itineraries.where(user_id: current_user.id).first
     @invitation = Invitation.new
    end

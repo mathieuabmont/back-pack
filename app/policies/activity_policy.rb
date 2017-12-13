@@ -8,16 +8,13 @@ class ActivityPolicy < ApplicationPolicy
     true
   end
 
-  def index?
+
+  def create?
     true
   end
 
-  def create?
-    record.step.trip.itineraries.first.user == user
-  end
-
   def new?
-    record.step.trip.itineraries.first.user == user
+    true
   end
 
   def edit?
