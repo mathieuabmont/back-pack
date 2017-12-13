@@ -67,7 +67,8 @@ class AccommodationsController < ApplicationController
   end
 
   def picture_scraper(url)
-    html_file = open(url)
+    uri = URI.parse(url)
+    html_file = uri.open
     html_doc = Nokogiri::HTML(html_file)
     html_doc.search('meta').each do |element|
       if element.attribute('property')
