@@ -1,6 +1,7 @@
-<h2>votre billet</h2>
-<%= cl_image_tag @ticket.photo  %>
 
-<div>
-  <%= link_to "RETOUR", transport_path(@transport), class: "btn btn-bleu"%>
+<h2>Votre billet</h2>
+<%= cl_image_tag @ticket.photo, width: 375, crop: :fill  %>
+
+<div class="center-btn" id="retour-btn">
+  <%= link_to "RETOUR", transport_path(@transport), class: "btn btn-bleu-so"%>
 </div>

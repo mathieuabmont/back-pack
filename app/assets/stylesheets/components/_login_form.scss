@@ -2,6 +2,7 @@
   // background: white;
   padding: 10px 20px;
   margin-top: 20px;
+
   // border-radius: 3px;
   // box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   h2 {
@@ -26,4 +27,43 @@
   //   margin-bottom: 20px;
   //   box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   // }
+}
+
+
+.share-form {
+  background: #72eac8;
+  color: white;
+  padding: 50px 20px;
+  margin-top: 20px;
+  p {
+    text-align: center;
+  }
+  form {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .form-group {
+    margin-bottom: 0;
+    width: 100%;
+  }
+  input[type="email"] {
+    border: none;
+    border-radius: 50px;
+    height: 55px;
+    font-size: 14px;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  button {
+    position: absolute;
+    background: #72eac8;
+    right: 8px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+  }
 }
