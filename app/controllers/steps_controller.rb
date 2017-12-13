@@ -5,7 +5,7 @@ class StepsController < ApplicationController
     @trips = policy_scope(Trip)
     @itinerary = @trip.itineraries.where(user_id: current_user.id).first
     @invitation = Invitation.new
-  end
+   end
 
   def new
     @trip = Trip.find(params[:trip_id])
