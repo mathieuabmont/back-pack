@@ -13,7 +13,9 @@
     </div>
     <h2><%= @accommodation.name.titleize %></h2>
     <h3> <i class="fa fa-map-marker" aria-hidden="true"></i> <%= @accommodation.location.capitalize %> </h3>
-    <h5> <%= @accommodation.description %> </h5>
+    <div class="description-accomodation">
+      <h5> <%= @accommodation.description %> </h5>
+    </div>
   </div>
 
   <div class="footer-accomodation">
