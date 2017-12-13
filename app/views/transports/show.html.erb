@@ -1,5 +1,5 @@
 <div class="scrollable full-height">
-  <h2 class="page-title"> Votre prochain déplacement </h2>
+  <div class="transport-title"> Votre prochain déplacement </div>
   <ul>
     <li class="transport-date"><%= @transport.departure_date.strftime("%m/%d") %> </li>
   </ul>
@@ -21,19 +21,24 @@
 
   <div class="center-btn">
     <% if @transport.ticket.nil? %>
-      <%= link_to 'MON BILLET', new_transport_ticket_path(@transport), class: 'btn btn-bleu-lg' %>
+      <%= link_to 'MON BILLET', new_transport_ticket_path(@transport), class: 'btn btn-bleu-so' %>
     <% else %>
-      <%= link_to 'MON BILLET', transport_ticket_path(@transport, @ticket), class: 'btn btn-bleu-lg' %>
+      <%= link_to 'MON BILLET', transport_ticket_path(@transport, @ticket), class: 'btn btn-bleu-so' %>
     <% end %>
   </div>
 
-  <% if policy(@transport).update? %>
-    <%= link_to 'Modifier', edit_transport_path(@transport), class: 'btn btn-bleu' %>
-  <% end %>
-  <% if policy(@transport).update? %>
-    <%= link_to 'Supprimer', transport_path(@transport), method: :delete, class: 'btn btn-bleu' %>
-  <% end %>
-
+  <div class="btn-center-transport">
+    <% if policy(@transport).update? %>
+    <div class="circle-icon">
+      <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_transport_path(@transport) %>
+    </div>
+    <% end %>
+    <% if policy(@transport).destroy? %>
+      <div class="circle-icon">
+        <%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, transport_path(@transport), method: :delete %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 

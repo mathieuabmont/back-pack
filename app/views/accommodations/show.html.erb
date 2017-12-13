@@ -12,7 +12,7 @@
       <%= @accommodation.arrival_date.strftime("%b %d") %><i class="fa fa-arrow-right"></i><%= @accommodation.departure_date.strftime("%b %d") %>
     </div>
     <h2><%= @accommodation.name.titleize %></h2>
-    <h3> <i class="fa fa-map-marker" aria-hidden="true"></i> <%= @accommodation.location.capitalize %> </h3>
+    <h3> <i class="fa fa-map-marker" aria-hidden="true"></i> <%= @accommodation.location.titleize %> </h3>
     <p> <%= @accommodation.description %></p>
   </div>
   <div class="btn-center">
