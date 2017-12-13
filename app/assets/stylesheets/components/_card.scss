@@ -128,3 +128,20 @@ left: 0;
     color: white;
   }
 }
+
+.card-invitation {
+  height: 150px;
+  background-color: white;
+  color: inherit;
+  position: relative;
+  padding: 10px;
+  margin-top: 5px;
+  text-align: center;
+
+  h5 {
+   font-family: lato;
+   text-transform: uppercase;
+   font-weight: bold;
+  }
+}
+
