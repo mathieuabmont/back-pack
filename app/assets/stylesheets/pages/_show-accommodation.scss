@@ -14,6 +14,9 @@ h2 {
     color: #4F4F4F;
     margin-left: 20px;
     margin-top: 30px;
+    i {
+      color: #17E8C7;
+    }
   }
   p{
     font-size: 20px;
@@ -27,7 +30,7 @@ h2 {
     padding: 5px;
     i{
       padding: 15px;
-      color: #11EDBE;
+      color: #17E8C7;
     }
     background-color: #DDDDDD;
     margin-left: 33px;
@@ -36,3 +39,12 @@ h2 {
     border-radius: 3px;
   }
 }
+
+.btn-center{
+  display: flex;
+  justify-content: space-between;
+  width: 129px;
+  position: absolute;
+  right: 33px;
+}
+
