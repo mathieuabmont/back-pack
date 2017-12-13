@@ -80,7 +80,6 @@
   justify-content: space-between;
   padding-left: 10px;
   padding-right: 10px;
-
 }
 
 .footer-icons {
@@ -89,7 +88,7 @@
 }
 
 .footer-trips h2 {
-  font-size: 24px;
+  font-size: 18px;
   font-family: lato;
   text-transform: uppercase;
   a {
@@ -144,5 +143,15 @@ left: 0;
    text-transform: uppercase;
    font-weight: bold;
   }
+}
+
+
+h1 {
+  font-size: 24px;
+  font-family: lato;
+  a {
+    text-align: left;
+  }
+  text-align: center;
 }
 

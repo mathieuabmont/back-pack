@@ -4,15 +4,19 @@
   justify-content: space-between;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-bottom: 15px;
-  margin-top: 15px;
   position: relative;
   height: 175px;
-  a {
+  > a {
     width: 60%;
+
+  }
+  .circle-icon {
     position: absolute;
-    left: 40%;
-    top: -20px;
+    top: 20px;
+    right: 10px;
+    font-size: 15px;
+    width: 35px;
+    height: 35px;
   }
 }
 .steps-card {
@@ -31,6 +35,9 @@
   text-align: center;
   padding: 0px;
   margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .step-footer-icons {
@@ -40,12 +47,12 @@
   margin-top: -20px;
 
 }
-#title {
-  padding-top: 52px;
-    font-size: 35px;
+.title {
+  font-size: 25px;
   /* size: 30px; */
   font-weight: bold;
   color: #4F4F4F;
+  margin: 0;
   // margin: -5px 0px;
   // margin-left: 34px;
   text-transform: uppercase;
