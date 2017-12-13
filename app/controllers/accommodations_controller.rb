@@ -63,7 +63,7 @@ class AccommodationsController < ApplicationController
   private
 
   def accommodation_params
-    params.require(:accommodation).permit(:category, :name, :url, :location, :arrival_date, :departure_date)
+    params.require(:accommodation).permit(:category, :name, :url, :location, :arrival_date, :departure_date, :description)
   end
 
   def picture_scraper(url)
