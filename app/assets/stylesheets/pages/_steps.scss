@@ -10,6 +10,9 @@
   height: 175px;
   a {
     width: 60%;
+    position: absolute;
+    left: 40%;
+    top: -20px;
   }
 }
 .steps-card {
@@ -18,6 +21,7 @@
   background-position: center;
   color: white;
   width: 40%;
+  // position: absolute;
 }
 
 .step-card-description {
@@ -25,8 +29,17 @@
   height: 155px;
   background-color: white;
   text-align: center;
-  h2 {
-    padding: 0px;
-    margin: 0px;
-  }
+  padding: 0px;
+  margin: 0px;
+}
+
+.step-footer-icons {
+  display: flex;
+  align-items: center;
+  margin-left: 321px;
+  margin-top: -20px;
+
+}
+#title {
+  padding-top: 52px;
 }
