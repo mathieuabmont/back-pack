@@ -6,6 +6,18 @@ h2 {
 
 }
 
+
+.banner-accommodation {
+  color: white;
+  text-align: center;
+  height: 38vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .banner-content {
   padding: 10px;
   h3{
@@ -48,3 +60,30 @@ h2 {
   right: 33px;
 }
 
+.footer-accomodation {
+
+  padding: 5px;                              /* Internal space */
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
+
+.footer-icons-accomodation {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+
+}
+
+.banner-content {
+
+  h5 {
+font-size: 18px;
+text-align: center;
+color: darkgrey;
+  }
+}
