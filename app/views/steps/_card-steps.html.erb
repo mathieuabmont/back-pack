@@ -3,11 +3,9 @@
   </div>
   <%= link_to ((step.transport.nil? && policy(Transport.new(step: step)).create?) ? new_step_transport_path(step) : transport_path(step.transport)) do %>
     <div class="step-card-description steps-main-info">
-      <h2 id="title"><%= step.title %></h2>
-      </div>
+      <h2 class="title"><%= step.title %></h2>
+    </div>
   <% end %>
- </div>
- <div class="step-footer-icons">
   <div class="circle-icon">
     <% if policy(step).edit? %>
       <%= link_to edit_step_path(step) do %>
@@ -16,4 +14,5 @@
     <% end %>
   </div>
 </div>
+
 

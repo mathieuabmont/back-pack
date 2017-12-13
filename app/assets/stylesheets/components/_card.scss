@@ -80,7 +80,6 @@
   justify-content: space-between;
   padding-left: 10px;
   padding-right: 10px;
-
 }
 
 .footer-icons {
@@ -89,7 +88,7 @@
 }
 
 .footer-trips h2 {
-  font-size: 24px;
+  font-size: 18px;
   font-family: lato;
   text-transform: uppercase;
   a {
@@ -116,7 +115,8 @@ left: 0;
 
 
 .circle-icon  {
-  background: #5cc9f5;
+  // background: #5cc9f5;
+  background: #17E8C7;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -129,3 +129,27 @@ left: 0;
   }
 }
 
+.card-invitation {
+  height: 150px;
+  background-color: white;
+  color: inherit;
+  position: relative;
+  padding: 10px;
+  margin-top: 5px;
+  text-align: center;
+
+  h5 {
+   font-family: lato;
+   text-transform: uppercase;
+   font-weight: bold;
+  }
+}
+
+h1 {
+  font-size: 24px;
+  font-family: lato;
+  a {
+    text-align: left;
+  }
+  text-align: center;
+}

@@ -3,7 +3,7 @@ class TripsController < ApplicationController
 
     @invitations = Invitation.where(email: current_user.email, status: "pending")
     @trips = policy_scope(Trip).includes(:itineraries).where(itineraries: {user_id: current_user.id})
-  end
+   end
 
   def new
     @trip = Trip.new
