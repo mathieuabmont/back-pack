@@ -5,9 +5,9 @@
       <%= render 'card-activity', activity: activity %>
     <% end %>
   </div>
-  <div class="btn btn-bleu" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))";>
+  <div class="center-btn addtrip">
     <% if policy(Activity.new(step: @step)).create? %>
-      <%= link_to 'Ajouter une activité', new_step_activity_path(@step), class:'' %>
+      <%= link_to 'Ajouter une activité', new_step_activity_path(@step), class:'btn btn-bleu-so' %>
     <% end %>
   </div>
 </div>
