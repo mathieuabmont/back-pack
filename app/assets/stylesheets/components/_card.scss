@@ -116,7 +116,8 @@ left: 0;
 
 
 .circle-icon  {
-  background: #5cc9f5;
+  // background: #5cc9f5;
+  background: #17E8C7;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -126,6 +127,22 @@ left: 0;
   margin-left: 10px;
   a {
     color: white;
+  }
+}
+
+.card-invitation {
+  height: 150px;
+  background-color: white;
+  color: inherit;
+  position: relative;
+  padding: 10px;
+  margin-top: 5px;
+  text-align: center;
+
+  h5 {
+   font-family: lato;
+   text-transform: uppercase;
+   font-weight: bold;
   }
 }
 

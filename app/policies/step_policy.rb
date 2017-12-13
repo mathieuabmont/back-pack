@@ -1,12 +1,10 @@
 class StepPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope
+      scope.all
     end
   end
-  def index?
-    return true
-  end
+
   def create?
     record.trip.itineraries.first.user == user
   end

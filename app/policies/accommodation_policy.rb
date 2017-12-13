@@ -9,10 +9,10 @@ class AccommodationPolicy < ApplicationPolicy
   end
 
   def new?
-    record.step.trip.itineraries.first.user == user
+    true
   end
   def create?
-    record.step.trip.itineraries.first.user == user
+    true
   end
 
   def edit?
