@@ -9,17 +9,22 @@
   <% end %>
 </div>
 
-<div class="center-btn">
-  <%= link_to "Ajouter un voyage", new_trip_path, class:'btn btn-bleu-lg' %>
+<div class="center-btn addtrip">
+  <%= link_to "Ajouter un voyage", new_trip_path, class:'btn btn-bleu-so' %>
 </div>
 
-  <div class="form-login">
+  <div class="all-invitations">
+    <h2>Mes invitations </h2>
     <% if current_user %>
     <% @invitations.each do |invitation| %>
-      <p>Vous avez une invitation sur un voyage </p>
-      <%= invitation.trip.title%>
-      <%= link_to "Rejoindre",  join_trip_path(invitation.trip, invitation: invitation.id), class: "btn btn-bleu" %>
-    <% end %>
+    <div class="card-invitation">
+      <p> Un ami vous invite à :</p>
+       <h5>  <%= invitation.trip.title%> </h5>
+
+      <%= link_to "Rejoindre",  join_trip_path(invitation.trip, invitation: invitation.id), class: "btn btn-bleu-rejoindre" %>
+      <% end %>
+    </div>
+
     <% end %>
 
   </div>

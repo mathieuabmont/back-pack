@@ -2,8 +2,8 @@ class TransportsController < ApplicationController
 
   def show
     @transport = Transport.find(params[:id])
-    authorize @transport
     @step = @transport.step
+    authorize @transport
     @ticket = @transport.ticket
   end
 
@@ -16,8 +16,8 @@ class TransportsController < ApplicationController
   def create
     @step = Step.find(params[:step_id])
     @transport = Transport.new(transport_params)
-    authorize @transport
     @transport.step = @step
+    authorize @transport
     if @transport.save
       redirect_to new_step_accommodation_path(@step)
     else
@@ -27,14 +27,14 @@ class TransportsController < ApplicationController
 
   def edit
     @transport = Transport.find(params[:id])
-    authorize @transport
     @step = @transport.step
+    authorize @transport
   end
 
   def update
     @transport =Transport.find(params[:id])
-    authorize @transport
     @step = @transport.step
+    authorize @transport
     if @transport.update(transport_params)
       redirect_to transport_path(@transport)
     else
