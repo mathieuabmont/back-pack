@@ -8,8 +8,8 @@
               <%= simple_form_for [@step, @transport] do |f| %>
                 <%= f.input :departure_location %>
                 <%= f.input :departure_time%>
-                <%= f.input :departure_date, placeholder: "2017-12-4", as: :string, input_html: {class: "datepicker"}%>
-                <%= f.input :arrival_date, placeholder: "2017-12-5", as: :string, input_html: {class: "datepicker"} %>
+                <%= f.input :departure_date, placeholder: "2017-12-4", as: :string%>
+                <%= f.input :arrival_date, placeholder: "2017-12-5", as: :string%>
                 <%= f.input :arrival_time %>
                 <%= f.input :arrival_location %>
                 <%= f.button :submit, "Ajouter", class: "btn-bleu" %>
