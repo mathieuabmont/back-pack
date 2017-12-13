@@ -11,7 +11,7 @@
           </div>
         </div>
 
-        <div class="profile_photo"> <% avatar_url = @profil.facebook_picture_url || "http://placehold.it/30x30" %> <%= image_tag avatar_url %>
+        <div class="profile_photo"> <% avatar_url = @profil.facebook_picture_url || avatar_url = @profil.photo %> <%= image_tag avatar_url %>
         </div>
       </div>
 
