@@ -7,7 +7,7 @@
     <ul class="content-transport-left">
       <li class="transparency-title">From</li>
 
-         <li class="main-info"><%= @transport.departure_time.nil? ? @transport.departure_time : "N/A"  %></li>
+         <li class="main-info"><%= @transport.departure_time.nil? ? "N/A" : @transport.departure_time  %></li>
 
       <li class="secondary-info"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= @transport.departure_location %></li>
     </ul>

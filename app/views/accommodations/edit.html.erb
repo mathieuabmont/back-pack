@@ -10,8 +10,8 @@
                 <%= f.input :location, placeholder: "120 rue Oberkampf" %>
                 <%= f.input :category, as: :radio_buttons,
                 collection: ['Hôtel', 'Airbnb', 'Auberge de jeunesse', "Chez l'habitant", 'Autre'], wrapper: :vertical_radio_and_checkboxes %>
-                <%= f.input :arrival_date, placeholder: "2017-12-5", as: :string%>
-                <%= f.input :departure_date, placeholder: "2017-12-4", as: :string%>
+                <%= f.input :arrival_date, placeholder: "2017-12-5", as: :string, input_html: {class: "datepicker"}%>
+                <%= f.input :departure_date, placeholder: "2017-12-4", as: :string, input_html: {class: "datepicker"}%>
                 <%= f.input :description, placeholder: "Code, heure du check in" %>
                 <%= f.input :url, placeholder: "http://www.airbnb/monnumerodereservation" %>
                 <%= f.button :submit, "Ajouter", class: "btn-bleu" %>
