@@ -73,9 +73,8 @@ def activity_params
 end
 
 def picture_scraper(url)
-  uri = URI.parse(url)
-  html_file = uri.open
-  html_doc = Nokogiri::HTML(html_file)
+  response = RestClient.get(url)
+  html_doc = Nokogiri::HTML(response.body)
   html_doc.search('meta').each do |element|
     if element.attribute('property')
       if element.attribute('property').value == "og:image"

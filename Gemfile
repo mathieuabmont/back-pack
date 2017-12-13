@@ -23,6 +23,7 @@ gem 'nokogiri'
 gem 'pundit'
 gem "letter_opener", group: :development
 gem 'postmark-rails'
+gem 'rest-client'
 
 group :development, :test do
   gem 'pry-byebug'
