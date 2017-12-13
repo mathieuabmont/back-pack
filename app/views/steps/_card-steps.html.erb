@@ -2,16 +2,17 @@
   <div class="steps-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path (step.photo.present? ? step.photo : 'maps.jpg'), height: 300, width: 400, crop: :fill %>')";>
   </div>
   <%= link_to ((step.transport.nil? && policy(Transport.new(step: step)).create?) ? new_step_transport_path(step) : transport_path(step.transport)) do %>
-    <div class="step-card-description">
-      <h2><%= step.title %></h2>
-      </div>
+    <div class="step-card-description steps-main-info">
+      <h2 class="title"><%= step.title %></h2>
+    </div>
   <% end %>
- </div>
- <div class="circle-icon">
-  <% if policy(step).edit? %>
-    <%= link_to edit_step_path(step) do %>
-      <i class="fa fa-pencil" aria-hidden="true"></i>
+  <div class="circle-icon">
+    <% if policy(step).edit? %>
+      <%= link_to edit_step_path(step) do %>
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
+
 
