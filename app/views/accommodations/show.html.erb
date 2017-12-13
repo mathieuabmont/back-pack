@@ -4,7 +4,7 @@
   <% elsif @accommodation.photo == "0" %>
     <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 50%), url('<%= image_path accommodation.jpg, height: 300, width: 400, crop: :fill %>');"></div>
   <% else %>
-    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 50%), url('<%= image_path @accommodation.photo, height: 300, width: 400, crop: :fill %>');"></div>
+    <div class="banner-accommodation" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 50%), url('<%= image_path @accommodation.photo, height: 300, width: 400, crop: :fill %>');"></div>
   <% end %>
 
   <div class="banner-content">
@@ -13,19 +13,24 @@
     </div>
     <h2><%= @accommodation.name.titleize %></h2>
     <h3> <i class="fa fa-map-marker" aria-hidden="true"></i> <%= @accommodation.location.capitalize %> </h3>
-    <p> <%= @accommodation.description %></p>
-  </div>
-  <div class="btn-center">
-    <% if policy(@accommodation).update? %>
-    <div class="circle-icon">
-      <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_accommodation_path(@accommodation) %>
+    <div class="description-accomodation">
+      <h5> <%= @accommodation.description %> </h5>
     </div>
-    <% end %>
-    <% if policy(@accommodation).destroy? %>
+  </div>
+
+  <div class="footer-accomodation">
+    <div class="footer-icons-accomodation">
+      <% if policy(@accommodation).update? %>
       <div class="circle-icon">
-        <%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, accommodation_path(@accommodation), method: :delete %>
+        <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_accommodation_path(@accommodation) %>
       </div>
-    <% end %>
+      <% end %>
+      <% if policy(@accommodation).destroy? %>
+        <div class="circle-icon">
+          <%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, accommodation_path(@accommodation), method: :delete %>
+        </div>
+      <% end %>
+    </div>
   </div>
   <%#= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=false&maptype=roadmap&markers=color:red|#{@accommodation.location}&key=AIzaSyDcpKX_kCi-4AcvJt7FiX8D9b-Nz3lMuOk" %>
 </div>
