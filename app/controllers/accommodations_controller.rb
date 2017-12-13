@@ -1,4 +1,4 @@
-require 'open-uri'
+# require 'open-uri'
 
 class AccommodationsController < ApplicationController
 
@@ -67,7 +67,7 @@ class AccommodationsController < ApplicationController
   end
 
   def picture_scraper(url)
-    html_file = open(url).read
+    html_file = open(url)
     html_doc = Nokogiri::HTML(html_file)
     html_doc.search('meta').each do |element|
       if element.attribute('property')
