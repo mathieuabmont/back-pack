@@ -4,14 +4,11 @@
     <% @activities.each do |activity| %>
       <%= render 'card-activity', activity: activity %>
     <% end %>
-    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))";>
-      <div class="card-description">
-        <h1>+++</h1>
-      </div>
-      <% if policy(Activity.new(step: @step)).create? %>
-        <%= link_to 'Ajouter', new_step_activity_path(@step), class:'card-link' %>
-      <% end %>
-    </div>
+  </div>
+  <div class="center-btn addtrip">
+    <% if policy(Activity.new(step: @step)).create? %>
+      <%= link_to 'Ajouter une activité', new_step_activity_path(@step), class:'btn btn-bleu-so' %>
+    <% end %>
   </div>
 </div>
 <%= render 'navbutton-activity', step: @step %>
