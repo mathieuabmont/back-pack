@@ -1,5 +1,5 @@
 <div class="list-trips">
-  <h1>Mes voyages </h1>
+  <h1 class="title-h1">Mes voyages </h1>
   <% if @trips %>
     <% @trips.each do |trip| %>
       <div>
@@ -14,7 +14,6 @@
 </div>
 
   <div class="all-invitations">
-    <h2>Mes invitations </h2>
     <% if current_user %>
     <% @invitations.each do |invitation| %>
     <div class="card-invitation">
