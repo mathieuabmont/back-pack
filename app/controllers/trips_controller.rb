@@ -48,7 +48,7 @@ class TripsController < ApplicationController
 
   def destroy
     @trip = Trip.find(params[:id])
-    authorize = @trip
+    authorize @trip
     @trip.destroy
     redirect_to trips_path
   end
