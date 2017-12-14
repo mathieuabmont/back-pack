@@ -10,8 +10,14 @@
             <h3><%= @profil.first_name.capitalize %> <%= @profil.last_name.capitalize %></h3>
           </div>
         </div>
-
-        <div class="profile_photo"> <% avatar_url = @profil.facebook_picture_url || avatar_url = @profil.photo %> <%= image_tag avatar_url %>
+        <% if @profil.facebook_picture_url %>
+          <% avatar_url = @profil.facebook_picture_url %>
+        <% elsif @profil.photo.present? %>
+          <% avatar_url = cl_image_path(@profil.photo, width: 200, height: 200, crop: :thumb, graviti: :face) %>
+        <% else %>
+          <% avatar_url = "http://res.cloudinary.com/alumni/image/upload/v1513179673/blank-profile-picture-973460_640_y863w7.png" %>
+        <% end %>
+        <div class="profile_photo"> <%= image_tag avatar_url %>
         </div>
       </div>
 
