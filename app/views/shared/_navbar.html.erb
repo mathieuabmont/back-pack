@@ -4,7 +4,7 @@
     <% if current_user.facebook_picture_url %>
       <% avatar_url = current_user.facebook_picture_url %>
     <% elsif current_user.photo.present? %>
-      <% avatar_url = cl_image_path(current_user.photo) %>
+      <% avatar_url = cl_image_path(current_user.photo, width: 35, height: 35, crop: :thumb, graviti: :face) %>
     <% else %>
       <% avatar_url = "http://res.cloudinary.com/alumni/image/upload/v1513179673/blank-profile-picture-973460_640_y863w7.png" %>
     <% end %>
