@@ -73,7 +73,11 @@ def activity_params
 end
 
 def picture_scraper(url)
-  response = RestClient.get(url)
+  begin
+    response = RestClient.get(url)
+  rescue RestClient::Forbidden || SocketError
+    response = RestClient.get("https://unsplash.com/photos/NrN5Rvl89Lo")
+  end
   html_doc = Nokogiri::HTML(response.body)
   html_doc.search('meta').each do |element|
     if element.attribute('property')
