@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 20171213154733) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photo", default: "http://res.cloudinary.com/alumni/image/upload/v1513179673/blank-profile-picture-973460_640_y863w7.png"
+    t.string "photo"
     t.string "provider"
     t.string "uid"
     t.string "facebook_picture_url"

@@ -67,7 +67,11 @@ class AccommodationsController < ApplicationController
   end
 
   def picture_scraper(url)
-    response = RestClient.get(url)
+    begin
+      response = RestClient.get(url)
+    rescue RestClient::Forbidden || SocketError
+      response = RestClient.get("https://www.airbnb.fr/rooms/3406062?location=atacama&s=9VUdBg8S")
+    end
     html_doc = Nokogiri::HTML(response.body)
     html_doc.search('meta').each do |element|
       if element.attribute('property')

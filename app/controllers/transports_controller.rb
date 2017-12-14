@@ -45,7 +45,9 @@ class TransportsController < ApplicationController
   def destroy
     @transport = Transport.find(params[:id])
     authorize @transport
+    @step = @transport.step
     @transport.destroy
+    redirect_to new_step_transport_path(@step)
   end
 
   private
