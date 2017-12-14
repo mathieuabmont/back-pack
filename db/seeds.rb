@@ -12,28 +12,31 @@ User.destroy_all
 
 p "creating users"
 
-user_rachel = User.new(first_name: 'rachel', last_name: 'Markle',  password: "password", email: 'rachel@gmail.com' )
-user_rachel.remote_photo_url = "http://res.cloudinary.com/alumni/image/upload/v1512492401/rachel_ozgdkv.jpg"
-user_rachel.save!
+user_mathieu = User.new(first_name: 'mathieu', last_name: 'Markle',  password: "password", email: 'mathieu@mail.com' )
+user_mathieu.remote_photo_url = "http://res.cloudinary.com/alumni/image/upload/v1512492401/rachel_ozgdkv.jpg"
+user_mathieu.save!
 
 p "users - done"
 
 
 p "creating a trip"
-trip_rachel = Trip.new(title: "France")
-trip_rachel.save!
+trip_mathieu = Trip.new(title: "Chili")
+trip_mathieu.remote_photo_url = ""
+trip_mathieu.save!
 p "trip - done"
 
 p "creating lien entre user et trip"
-itinerary_rachel = Itinerary.new(trip: trip_rachel, user: user_rachel)
-itinerary_rachel.save!
+itinerary_mathieu = Itinerary.new(trip: trip_mathieu, user: user_mathieu)
+itinerary_mathieu.save!
 p"itineray done"
 
 
 p "creating 2 steps"
-step_1_rachel = Step.new(title: "Lyon", trip: trip_rachel)
+step_1_mathieu = Step.new(title: "Lyon", trip: trip_mathieu)
+step_1_rachel.remote_photo_url = ""
 step_1_rachel.save!
-step_2_rachel = Step.new(title: "Marseille", trip: trip_rachel )
+step_2_rachel = Step.new(title: "Marseille", trip: trip_mathieu )
+step_2_rachel.remote_photo_url = ""
 step_2_rachel.save!
 p "2 steps - done"
 
