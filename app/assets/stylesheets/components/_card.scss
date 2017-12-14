@@ -73,13 +73,11 @@
 
 .footer-trips {
   background: white;                          /* White background */
-  padding: 5px;                              /* Internal space */
+  padding: 5px 15px;                              /* Internal space */
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 .footer-icons {
@@ -148,9 +146,10 @@ left: 0;
 .title-h1 {
   font-size: 24px;
   font-family: lato;
+  text-align: center;
+  margin: 23px;
   a {
     text-align: left;
   }
-  text-align: center;
 }
 
