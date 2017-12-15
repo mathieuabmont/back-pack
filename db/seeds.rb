@@ -80,7 +80,7 @@ p "1 ticket - done"
  activity_3_Santiago.save!
  activity_4_Santiago = Activity.new(title: "Rafting Maipo Canyon Chile, 30 min de voiture", url:"http://www.casasdelbosque.cl/english/vina/vina.php",photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513269888/rafting_santiago_activity_cubvit.jpg", step: step_1_mathieu )
  activity_4_Santiago.save!
- activity_1_Valparaiso = Activity.new(title: "Aller voir Ascensor de Reina Victoria, aller le matin sinon trop de monde", url:"http://www.casasdelbosque.cl/english/vina/vina.php",photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513269888/rafting_santiago_activity_cubvit.jpg", step: step_3_mathieu )
+ activity_1_Valparaiso = Activity.new(title: "Aller voir Ascensor de Reina Victoria, aller le matin sinon trop de monde", url:"http://www.casasdelbosque.cl/english/vina/vina.php",photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513251955/Step3-activity-1-Ascensor-ReinaVictoria_nk2r2z.jpg", step: step_3_mathieu )
  activity_1_Valparaiso.save!
  p "3 activities - done"
 
@@ -89,7 +89,7 @@ p "1 ticket - done"
 
  activity_1_Calama = Activity.new(title: "Visiter le Salar de Tara. Pas oublier appareil photo", url:"https://www.chauxmelemonde.com/salar-de-tara-chili/", photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513251963/Activite%CC%81-1-salar-de-tara_uulsje.jpg", step: step_2_mathieu)
  activity_1_Calama.save!
- activity_2_Calama = Activity.new(title: "Trekking de une journée a Machucha et Rio Grande", url:"http://eldesiertoflorido.over-blog.com/2016/09/site-touristique-trekking-machuca-rio-grande.html", photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513251955/Step3-activity-1-Ascensor-ReinaVictoria_nk2r2z.jpg", step: step_2_mathieu)
+ activity_2_Calama = Activity.new(title: "Trekking de une journée a Machucha et Rio Grande", url:"http://eldesiertoflorido.over-blog.com/2016/09/site-touristique-trekking-machuca-rio-grande.html", photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513269888/rafting_santiago_activity_cubvit.jpg", step: step_2_mathieu)
  activity_2_Calama.save!
  p "2 activities - done"
 
