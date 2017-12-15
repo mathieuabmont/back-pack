@@ -67,3 +67,23 @@
     border: none;
   }
 }
+
+.ticket_photo {
+  input {
+    display: none;
+  }
+  label {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: RGBA(0, 241, 203, 1.00);
+    // display: block;
+    padding: 20px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 40px;
+  }
+}

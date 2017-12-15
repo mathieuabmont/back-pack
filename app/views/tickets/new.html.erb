@@ -8,16 +8,16 @@
           <p>Ou une capture d'écran de celui-ci</p>
           <% if current_user %>
             <%= simple_form_for [@transport, @ticket] do |f| %>
-              <%= f.input :photo %>
+              <%= f.input :photo, class: :btn_upload, label: "+" %>
+              <p id="photo-desc"></p>
               <%= f.button :submit, "Ajouter", class: "btn btn-bleu", id: "retour-btn"%>
             <% end %>
           <% end %>
-
         </div>
       </div>
     </div>
   </div>
-</div>
 <div class="center-btn" id="retour-btn">
   <%= link_to "RETOUR", transport_path(@transport), class: "btn btn-bleu-so"%>
+</div>
 </div>
