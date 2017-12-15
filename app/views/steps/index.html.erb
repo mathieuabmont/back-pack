@@ -4,7 +4,7 @@
   <% @steps.each do |step| %>
       <%= render 'card-steps', step: step %>
   <% end %>
-  <div class="center-btn addtrip ">
+  <div class="center-btn addtrip">
     <div class="btn btn-bleu-so"> <%= link_to "Ajouter une étape", new_trip_step_path(@trip) %>
     </div>
   </div>
