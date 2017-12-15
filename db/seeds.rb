@@ -35,7 +35,7 @@ itinerary_mathieu.save!
 p"itineray done"
 
 
-p "creating 2 steps"
+p "creating 3 steps"
 step_1_mathieu = Step.new(title: "Santiago", trip: trip_mathieu, photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513251957/step2-Santiago_kmzewe.jpg")
 step_1_mathieu.save!
 step_2_mathieu = Step.new(title: "Calama", trip: trip_mathieu, photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513251954/Step-1ville_1-calama_xqisdr.jpg" )
@@ -51,32 +51,32 @@ date_departure_hotel = Date.today + 5
 date_departure_hotel_2 = Date.today + 7
 
 p "creating 1 transport pour Santiago"
-transport_1_Santiago = Transport.new(departure_date: date_departure_step1, departure_location: "Paris", departure_time: "14h45", arrival_location: "santiago", arrival_date: date_departure_step1, arrival_time: "21H12", step: step_1_mathieu )
+transport_1_Santiago = Transport.new(departure_date: date_departure_step1, departure_location: "Paris", departure_time: "14H45", arrival_location: "santiago", arrival_date: date_departure_step1, arrival_time: "21H12", step: step_1_mathieu )
 transport_1_Santiago.save!
 p "1 transport - done"
 
 p "creating 1 transport pour Calama"
-transport_1_Calama = Transport.new(departure_date: date_departure_hotel, departure_location: "Santiago", departure_time: "18h20", arrival_location: "Calama", arrival_date: date_departure_hotel, arrival_time: "23H30", step: step_2_mathieu )
+transport_1_Calama = Transport.new(departure_date: date_departure_hotel, departure_location: "Santiago", departure_time: "18H20", arrival_location: "Calama", arrival_date: date_departure_hotel, arrival_time: "23H30", step: step_2_mathieu )
 transport_1_Calama.save!
 p "1 transport - done"
 
 p "creating 1 ticket pour Santiago"
 ticket_1_Santiago = Ticket.new(transport: transport_1_Santiago, user: user_mathieu)
-ticket_1_Santiago.remote_photo_url = "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513261744/billet_avion_PAris_santiago_vq3kx8.png"
+ticket_1_Santiago.remote_photo_url = "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513327979/Billet_d_avion_ij6bzd.png"
 ticket_1_Santiago.save!
 p "1 ticket - done"
 
 
 
- p "creating 2 activities pour Santiago"
+ p "creating 4 activities pour Santiago"
  activity_1_Santiago = Activity.new(title: "Balade à vélo", url:"https://labicicletaverde.com/", photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513251962/Step2-activity_2-_bike_ifrt5z.jpg", step: step_1_mathieu)
  activity_1_Santiago.save!
  activity_2_Santiago = Activity.new(title: "Degustation de vins", url:"http://www.casasdelbosque.cl/english/vina/vina.php",photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513251956/step2-activity_2-_wine_jqhmmz.jpg", step: step_1_mathieu )
  activity_2_Santiago.save!
  activity_3_Santiago = Activity.new(title: "Fiesta à la Feria", url:"http://www.casasdelbosque.cl/english/vina/vina.php",photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513269187/Santiago-activity-fiesta_qe9iah.jpg", step: step_1_mathieu )
  activity_3_Santiago.save!
- activity_4_Santiago = Activity.new(title: "Rafting Maipo Canyon Chile", url:"http://www.casasdelbosque.cl/english/vina/vina.php",photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513269888/rafting_santiago_activity_cubvit.jpg", step: step_1_mathieu )
- activity_4_Santiago.save!
+ #activity_4_Santiago = Activity.new(title: "Rafting Maipo Canyon Chile", url:"http://www.casasdelbosque.cl/english/vina/vina.php",photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513269888/rafting_santiago_activity_cubvit.jpg", step: step_1_mathieu )
+ #activity_4_Santiago.save!
 
  p "2 activities - done"
 
@@ -92,8 +92,8 @@ p "1 ticket - done"
 
 
  p "creating 1 logement pour Santiago"
- accommodation_Calama = Accommodation.new(category: "Airbnb", name: "At Rodrigo's", url: "https://www.airbnb.fr/rooms/3406062", photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513268619/caravane_g3qnix.jpg", location: "Ruta 21, Calama", arrival_date: date_departure_hotel, departure_date: date_departure_hotel_2, description: "Tournez à droite après le panneau 21.", step: step_2_mathieu )
- accommodation_Calama.save!
+ accommodation_Santiago = Accommodation.new(category: "Airbnb", name: "At Rodrigo's", url: "https://www.airbnb.fr/rooms/3406062", photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513268619/caravane_g3qnix.jpg", location: "Ruta 21, Calama", arrival_date: date_departure_step1, departure_date: date_departure_hotel, description: "Tournez à droite après le panneau 21.", step: step_1_mathieu )
+ accommodation_Santiago.save!
  p "1 logement - done"
 
 
