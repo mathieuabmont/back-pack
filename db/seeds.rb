@@ -68,24 +68,24 @@ p "1 ticket - done"
 
 
 
- p "creating 4 activities pour Santiago"
- activity_1_Santiago = Activity.new(title: "Balade à vélo", url:"https://labicicletaverde.com/", photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513251962/Step2-activity_2-_bike_ifrt5z.jpg", step: step_1_mathieu)
+ p "creating 3 activities pour Santiago"
+ activity_1_Santiago = Activity.new(title: "Balade à vélo, avec Santiago Markets Bike tour", url:"https://labicicletaverde.com/", photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513251962/Step2-activity_2-_bike_ifrt5z.jpg", step: step_1_mathieu)
  activity_1_Santiago.save!
- activity_2_Santiago = Activity.new(title: "Degustation de vins", url:"http://www.casasdelbosque.cl/english/vina/vina.php",photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513251956/step2-activity_2-_wine_jqhmmz.jpg", step: step_1_mathieu )
+ activity_2_Santiago = Activity.new(title: "Degustation de vins a la Casa del Bosque, gouter le Almaviva", url:"http://www.casasdelbosque.cl/english/vina/vina.php",photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513251956/step2-activity_2-_wine_jqhmmz.jpg", step: step_1_mathieu )
  activity_2_Santiago.save!
- activity_3_Santiago = Activity.new(title: "Fiesta à la Feria", url:"http://www.casasdelbosque.cl/english/vina/vina.php",photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513269187/Santiago-activity-fiesta_qe9iah.jpg", step: step_1_mathieu )
+ activity_3_Santiago = Activity.new(title: "Fiesta à la Feria la boite electro de Santiago", url:"http://www.casasdelbosque.cl/english/vina/vina.php",photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513269187/Santiago-activity-fiesta_qe9iah.jpg", step: step_1_mathieu )
  activity_3_Santiago.save!
- #activity_4_Santiago = Activity.new(title: "Rafting Maipo Canyon Chile", url:"http://www.casasdelbosque.cl/english/vina/vina.php",photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513269888/rafting_santiago_activity_cubvit.jpg", step: step_1_mathieu )
+ #activity_4_Santiago = Activity.new(title: "Rafting Maipo Canyon Chile, 30 min de voiture", url:"http://www.casasdelbosque.cl/english/vina/vina.php",photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513269888/rafting_santiago_activity_cubvit.jpg", step: step_1_mathieu )
  #activity_4_Santiago.save!
 
- p "2 activities - done"
+ p "3 activities - done"
 
 
  p "creating 2 activities pour Calama"
 
- activity_1_Calama = Activity.new(title: "Salar de Tara", url:"https://www.chauxmelemonde.com/salar-de-tara-chili/", photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513251963/Activite%CC%81-1-salar-de-tara_uulsje.jpg", step: step_2_mathieu)
+ activity_1_Calama = Activity.new(title: "Visiter le Salar de Tara. Pas oublier appareil photo", url:"https://www.chauxmelemonde.com/salar-de-tara-chili/", photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513251963/Activite%CC%81-1-salar-de-tara_uulsje.jpg", step: step_2_mathieu)
  activity_1_Calama.save!
- activity_2_Calama = Activity.new(title: "Trekking Machucha", url:"http://eldesiertoflorido.over-blog.com/2016/09/site-touristique-trekking-machuca-rio-grande.html", photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513251958/step1-activity2-trek_khy5m6.jpg", step: step_2_mathieu)
+ activity_2_Calama = Activity.new(title: "Trekking de une journée a Machucha et Rio Grande", url:"http://eldesiertoflorido.over-blog.com/2016/09/site-touristique-trekking-machuca-rio-grande.html", photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513251958/step1-activity2-trek_khy5m6.jpg", step: step_2_mathieu)
  activity_2_Calama.save!
  p "2 activities - done"
 
