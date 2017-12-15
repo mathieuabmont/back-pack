@@ -9,12 +9,15 @@ class TicketPolicy < ApplicationPolicy
   end
 
   def new?
-    record.transport.step.trip.itineraries.first.user == user
+    # record.transport.step.trip.itineraries.first.user == user
+    true
   end
 
   def create?
-   record.transport.step.trip.itineraries.first.user == user
+   # record.transport.step.trip.itineraries.first.user == user
+    true
   end
+
 
   def destroy?
    record.transport.step.trip.itineraries.first.user == user
