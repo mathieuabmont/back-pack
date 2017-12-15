@@ -1,4 +1,4 @@
-
+Invitation.destroy_all
 Ticket.destroy_all
 Transport.destroy_all
 Activity.destroy_all
