@@ -89,14 +89,14 @@ p "1 ticket - done"
 
  activity_1_Calama = Activity.new(title: "Visiter le Salar de Tara. Pas oublier appareil photo", url:"https://www.chauxmelemonde.com/salar-de-tara-chili/", photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513251963/Activite%CC%81-1-salar-de-tara_uulsje.jpg", step: step_2_mathieu)
  activity_1_Calama.save!
- activity_2_Calama = Activity.new(title: "Trekking de une journée a Machucha et Rio Grande", url:"http://eldesiertoflorido.over-blog.com/2016/09/site-touristique-trekking-machuca-rio-grande.html", photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513269888/rafting_santiago_activity_cubvit.jpg", step: step_2_mathieu)
+ activity_2_Calama = Activity.new(title: "Trekking de une journée a Machucha et Rio Grande", url:"http://eldesiertoflorido.over-blog.com/2016/09/site-touristique-trekking-machuca-rio-grande.html", photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513251958/step1-activity2-trek_khy5m6.jpg", step: step_2_mathieu)
  activity_2_Calama.save!
  p "2 activities - done"
 
 
 
  p "creating 1 logement pour Santiago"
- accommodation_Santiago = Accommodation.new(category: "Airbnb", name: "At Rodrigo's", url: "https://www.airbnb.fr/rooms/3406062", photo: "http://res.cloudinary.com/alumni/image/upload/q_auto:low/v1513268619/caravane_g3qnix.jpg", location: "534 Avenida Libertador, Santiago, Las Condes", arrival_date: date_departure_step1, departure_date: date_departure_hotel, description: "Tournez à droite après le panneau 21.", step: step_1_mathieu )
+ accommodation_Santiago = Accommodation.new(category: "Airbnb", name: "At Rodrigo's", url: "https://www.airbnb.fr/rooms/3406062", photo: "http://res.cloudinary.com/alumni/image/upload/v1513337195/Flat_santiago_the_one_hjmh6k.jpg", location: "534 Avenida Libertador, Santiago, Las Condes", arrival_date: date_departure_step1, departure_date: date_departure_hotel, description: "Increíble Duplex a nuevo, Mall Costanera Center. Code 43B54", step: step_1_mathieu )
  accommodation_Santiago.save!
  accommodation_Calama = Accommodation.new(category: "Hotel", name: "Tierra Atacama", url: "http://www.tierrahotels.com/tierra-atacama-hotel-boutique-amp-spa/", photo: "http://res.cloudinary.com/alumni/image/upload/v1513335480/Hotel_calama_zt8ld8.jpg", location: "Calle Séquitor, (San Pedro de Atacama, Chile) ", arrival_date: date_departure_hotel, departure_date: date_departure_hotel_2, description: "Si perdu les joindre au +35 7754 7754 43", step: step_2_mathieu )
  accommodation_Calama.save!
